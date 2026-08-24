@@ -34,7 +34,7 @@ A typical UML class contains three sections:
 | `#` | protected |
 | `~` | package |
 
-If no access modifier is specified in Java, the default visibility is **package**.
+If no access modifier is specified in Java, the default visibility is *package*.
 
 ### Attributes
 
