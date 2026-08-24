@@ -24,6 +24,7 @@ A typical UML class contains three sections:
 ├─────────────────────────┤
 │ operations / methods    │
 └─────────────────────────┘
+```
 
 ### Visibility
 
