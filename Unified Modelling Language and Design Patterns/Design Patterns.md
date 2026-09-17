@@ -18,6 +18,15 @@ A simple way to classify them:
 - Moves object creation into a separate method/class.
 - Useful when the exact object type may vary.
 
+**Concrete example:** A notification system creates either an `EmailNotification` or `SMSNotification` depending on the requested type.
+
+```java
+Notification notification = NotificationFactory.create("email");
+notification.send("Hello");
+```
+
+The client asks for a `Notification` without needing to construct a specific implementation directly.
+
 **Key idea:**  
 > Choose what object to create.
 
@@ -29,6 +38,14 @@ A simple way to classify them:
 - Constructor is usually private.
 - Provides a shared/global access point.
 
+**Concrete example:** An application uses one shared configuration manager.
+
+```java
+ConfigManager config = ConfigManager.getInstance();
+```
+
+Every part of the program receives the same `ConfigManager` instance rather than creating separate copies.
+
 **Key idea:**  
 > Only one object.
 
@@ -39,9 +56,15 @@ A simple way to classify them:
 ### 1. Observer
 **Purpose:** Automatically notify dependent objects when another object changes.
 
-Example:
-- YouTube channel = Subject
-- Subscribers = Observers
+**Concrete example:** A YouTube channel is the **subject**, and its subscribers are **observers**. When a new video is uploaded, all subscribers are notified automatically.
+
+```java
+channel.subscribe(alice);
+channel.subscribe(bob);
+channel.uploadVideo("Design Patterns");
+```
+
+Here, `alice` and `bob` do not repeatedly check the channel; the channel notifies them when its state changes.
 
 **Key idea:**  
 > Subscribe and notify.
@@ -51,13 +74,17 @@ Example:
 ### 2. State
 **Purpose:** Change an object's behaviour depending on its current state.
 
-Example:
+**Concrete example:** A user can be a `Guest`, `Member`, or `Admin`. The same operation behaves differently depending on the current state.
 
-```text
-Guest → Member → Admin
+```java
+user.setState(new GuestState());
+user.editPost();      // denied
+
+user.setState(new AdminState());
+user.editPost();      // allowed
 ```
 
-The same method may behave differently depending on the current state.
+Instead of putting many `if/else` checks inside `User`, the behaviour is delegated to separate state objects.
 
 **Key idea:**  
 > Behaviour changes with state.
@@ -67,16 +94,21 @@ The same method may behave differently depending on the current state.
 ### 3. Template Method
 **Purpose:** Define the general structure of an algorithm while allowing subclasses to customise some steps.
 
-Example:
+**Concrete example:** Both CSV and JSON importers follow the same overall import process, but parse the data differently.
 
-```text
-prepare()
-    step1()
-    step2()
-    step3()
+```java
+abstract class DataImporter {
+    public final void importData() {
+        readFile();
+        parseData();
+        saveData();
+    }
+
+    abstract void parseData();
+}
 ```
 
-The overall process stays fixed, but some steps can be overridden.
+`CSVImporter` and `JSONImporter` can override `parseData()`, while the overall algorithm remains fixed.
 
 **Key idea:**  
 > Fixed recipe, custom steps.
@@ -86,14 +118,18 @@ The overall process stays fixed, but some steps can be overridden.
 ### 4. Iterator
 **Purpose:** Traverse elements in a collection without exposing its internal structure.
 
-Common methods:
+**Concrete example:** A playlist can provide an iterator so the client can visit each song without knowing how the playlist stores them internally.
 
 ```java
-hasNext()
-next()
+Iterator<Song> iterator = playlist.iterator();
+
+while (iterator.hasNext()) {
+    Song song = iterator.next();
+    System.out.println(song.getTitle());
+}
 ```
 
-The caller does not need to know whether the collection is an array, tree, list, etc.
+The caller only needs `hasNext()` and `next()`; it does not need to know whether the songs are stored in an array, list, tree, etc.
 
 **Key idea:**  
 > Move through items.
@@ -105,7 +141,15 @@ The caller does not need to know whether the collection is an array, tree, list,
 ### 1. DAO — Data Access Object
 **Purpose:** Separate data-access logic from the rest of the program.
 
-Example:
+**Concrete example:** `UserDAO` handles loading and saving users, so the rest of the application does not need to know whether the data comes from a database or file.
+
+```java
+UserDAO userDAO = new UserDAO();
+User user = userDAO.findById(101);
+userDAO.save(user);
+```
+
+Conceptually:
 
 ```text
 Application
@@ -115,8 +159,6 @@ UserDAO
 Database / File
 ```
 
-The application does not need to know how the data is actually stored.
-
 **Key idea:**  
 > Hide data access.
 
@@ -125,29 +167,24 @@ The application does not need to know how the data is actually stored.
 ### 2. Façade
 **Purpose:** Provide a simple interface to a complicated subsystem.
 
-Instead of:
+**Concrete example:** An online store's checkout process may involve payment, inventory, shipping, and email services. A `CheckoutFacade` hides those details behind one simple call.
 
-```text
-Client
- ↓
-A
- ↓
-B
- ↓
-C
- ↓
-D
+```java
+CheckoutFacade checkout = new CheckoutFacade();
+checkout.placeOrder(order);
 ```
 
-Use:
+Internally, the façade may coordinate:
 
 ```text
-Client
- ↓
-Facade
- ↓
-A + B + C + D
+CheckoutFacade
+   ├── PaymentService
+   ├── InventoryService
+   ├── ShippingService
+   └── EmailService
 ```
+
+The client only interacts with the façade instead of coordinating all four services itself.
 
 **Key idea:**  
 > Simplify complexity.
@@ -157,17 +194,17 @@ A + B + C + D
 ### 3. Decorator
 **Purpose:** Add behaviour to an individual object dynamically by wrapping it.
 
-Example:
+**Concrete example:** Start with an orange juice, then dynamically add sugar and carrot without creating a subclass for every possible combination.
 
 ```text
-OrangeJuice
-    ↓
-SugarDecorator
-    ↓
 CarrotDecorator
+    ↓ wraps
+SugarDecorator
+    ↓ wraps
+OrangeJuice
 ```
 
-Avoids creating many subclasses such as:
+This avoids classes such as:
 
 ```text
 OrangeJuiceWithSugar
@@ -248,17 +285,17 @@ System.out.println(juice.getDescription());
 
 # Quick Comparison
 
-| Pattern | Main Purpose |
-|---|---|
-| Factory Method | Create objects |
-| Singleton | Restrict object creation to one instance |
-| Observer | Notify dependent objects |
-| State | Change behaviour based on state |
-| Template Method | Define an algorithm structure |
-| Iterator | Traverse a collection |
-| DAO | Separate data access |
-| Façade | Simplify a complex subsystem |
-| Decorator | Dynamically add functionality |
+| Pattern | Main Purpose | Concrete Example |
+|---|---|---|
+| Factory Method | Create objects | Create an email or SMS notification |
+| Singleton | Restrict object creation to one instance | Shared configuration manager |
+| Observer | Notify dependent objects | YouTube channel notifying subscribers |
+| State | Change behaviour based on state | Guest / Member / Admin behaviour |
+| Template Method | Define an algorithm structure | CSV and JSON importers |
+| Iterator | Traverse a collection | Moving through songs in a playlist |
+| DAO | Separate data access | `UserDAO` reading/writing user data |
+| Façade | Simplify a complex subsystem | One checkout call coordinating several services |
+| Decorator | Dynamically add functionality | Adding sugar and carrot to juice |
 
 ## One-line Memory Trick
 
