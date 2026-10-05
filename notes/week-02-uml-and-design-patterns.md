@@ -1,5 +1,3 @@
-> **Image availability:** The original Obsidian notes reference diagrams whose image files were not supplied. Their positions are marked below.
-
 # Unified Modelling Language - Building Blocks
 Things (abstraction/elements that will be modelled)
 Relationships (relate things/tie them together)
@@ -13,13 +11,13 @@ A class diagram shows a set of classes, interfaces, and collaborations and their
 e.g. 
 
 
-> *Diagram not included in this upload: `Pasted image 20260817002843.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817002843.png)
 
 
-> *Diagram not included in this upload: `Pasted image 20260817002903.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817002903.png)
 
 
-> *Diagram not included in this upload: `Pasted image 20260817003039.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817003039.png)
 
 
 ## UML Relationships
@@ -37,10 +35,10 @@ UML relationships describe **how classes or objects are connected**.
 - UML: solid line + hollow triangle pointing to superclass
 
 
-> *Diagram not included in this upload: `Pasted image 20260817004048.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817004048.png)
 
 
-> *Diagram not included in this upload: `Pasted image 20260817004340.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817004340.png)
 
 
 ### 2. Association
@@ -51,7 +49,7 @@ UML relationships describe **how classes or objects are connected**.
 - Think: **"has a connection with"**
 
 
-> *Diagram not included in this upload: `Pasted image 20260817005358.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817005358.png)
 
 
 ### 3. Dependency
@@ -77,7 +75,7 @@ public class CarFactory {
 ```
 
 
-> *Diagram not included in this upload: `Pasted image 20260817005830.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817005830.png)
 
 
 ### 4. Aggregation
@@ -100,7 +98,7 @@ class Car {
 ```
 
 
-> *Diagram not included in this upload: `Pasted image 20260817010209.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817010209.png)
 
 
 ### 5. Composition
@@ -111,7 +109,7 @@ class Car {
 - UML: filled diamond on the **whole** side.
 
 
-> *Diagram not included in this upload: `Pasted image 20260817010120.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817010120.png)
 
 
 **Composition** is a strong whole–part relationship where the whole owns the parts, and the parts' lifecycle depends on the whole.
@@ -130,13 +128,13 @@ public class Order {
 ### Summary
 
 
-> *Diagram not included in this upload: `Pasted image 20260817011449.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817011449.png)
 
 
 ### Multiplicity
 
 
-> *Diagram not included in this upload: `Pasted image 20260817011113.png`.*
+![Study note diagram](../image/Pasted%20image%2020260817011113.png)
 
 
 ### Quick Comparison
@@ -177,7 +175,7 @@ and many others!
 - Structural
 
 
-> *Diagram not included in this upload: `Pasted image 20260822013050.png`.*
+![Study note diagram](../image/Pasted%20image%2020260822013050.png)
 
 
 ## I. Creational Patterns
@@ -820,7 +818,7 @@ same object
 algorithm's structure.
 
 
-> *Diagram not included in this upload: `Pasted image 20260829234443.png`.*
+![Study note diagram](../image/Pasted%20image%2020260829234443.png)
 
 
 example:

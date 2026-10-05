@@ -1,5 +1,3 @@
-> **Image availability:** The original Obsidian notes reference diagrams whose image files were not supplied. Their positions are marked below.
-
 # Week 3 — Data Structures
 
 
@@ -162,18 +160,18 @@ A normal BST may be unbalanced, while a Red-Black Tree is a **close-to-balanced 
 - If: $$ |bf(n)| > 1 $$ then the **AVL property is violated**, and the tree needs to be **rebalanced**.
 - 
 
-> *Diagram not included in this upload: `Pasted image 20260818004615.png`.*
+![Study note diagram](../image/Pasted%20image%2020260818004615.png)
 
 
 - 
 
-> *Diagram not included in this upload: `Pasted image 20260818004716.png`.*
+![Study note diagram](../image/Pasted%20image%2020260818004716.png)
 
 
-> *Diagram not included in this upload: `Pasted image 20260818004637.png`.*
+![Study note diagram](../image/Pasted%20image%2020260818004637.png)
 
 
-> *Diagram not included in this upload: `Pasted image 20260818012635.png`.*
+![Study note diagram](../image/Pasted%20image%2020260818012635.png)
 
 
 ## AVL Tree Height

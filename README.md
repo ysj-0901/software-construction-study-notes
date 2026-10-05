@@ -15,7 +15,7 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 | 6 | [Android](notes/week-06-android.md) | Activities, intents, layouts, event listeners, adapters and pair programming |
 | 7 | [Refactoring and B-Trees](notes/week-07-refactoring-and-b-trees.md) | SOLID, code smells, B-tree properties, insertion and deletion |
 
-**Images:** Weeks 2 and 3 reference diagrams from my Obsidian notes. The image files were not included in this update, so their positions are marked in the text.
+**Images:** Diagrams used in the notes are stored in the [`image`](image/) folder and embedded alongside the relevant explanations.
 
 ## Topics
 
