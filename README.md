@@ -4,6 +4,26 @@ This repository contains my personal study notes for software construction.
 
 I’m using it to keep track of what I learn, organise important concepts, and record my progress over time.
 
+## Weekly Notes
+
+| Week | Notes | Main topics |
+| --- | --- | --- |
+| 2 | [UML and Design Patterns](notes/week-02-uml-and-design-patterns.md) | UML relationships; creational, behavioural and structural patterns; Java examples |
+| 3 | [Data Structures](notes/week-03-data-structures.md) | Binary search trees, predecessor/successor, deletion, red-black trees and AVL trees |
+| 4 | [Persistent Data](notes/week-04-persistent-data.md) | Storage formats, format selection, robustness, internationalisation and relational databases |
+| 5 | [Software Testing](notes/week-05-software-testing.md) | JUnit 4, TDD, integration testing, coverage and fault injection |
+| 6 | [Android](notes/week-06-android.md) | Activities, intents, layouts, event listeners, adapters and pair programming |
+| 7 | [Refactoring and B-Trees](notes/week-07-refactoring-and-b-trees.md) | SOLID, code smells, B-tree properties, insertion and deletion |
+
+### Earlier quick summaries
+
+- [UML](Unified%20Modelling%20Language%20and%20Design%20Patterns/UML.md)
+- [Design Patterns](Unified%20Modelling%20Language%20and%20Design%20Patterns/Design%20Patterns.md)
+
+The weekly notes provide the latest, more detailed material; the earlier summaries remain available for quick revision.
+
+**Images:** Weeks 2 and 3 reference diagrams from my Obsidian notes. The image files were not included in this update, so their positions are marked in the text.
+
 ## Topics
 
 - Software Construction Fundamentals
@@ -18,22 +38,24 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 - Intellectual Property
 - Tokenisers, Parsers & Contemporary Development Methods
 
-These topics follow the main learning path of COMP6442 at ANU
+These topics follow the main learning path of COMP6442 at ANU.
 
 ## Progress
 
+Updated with Week 2–7 notes on 5 October 2026.
+
 This is a work in progress, and I’ll keep updating the notes as I learn more.
 
-My goal is to build a clearer understanding of how software is designed, implemented, tested, and maintained. 
+My goal is to build a clearer understanding of how software is designed, implemented, tested, and maintained.
 
 ## Tools
 
 - Java
 - Git / GitHub
-- IntelliJ IDEA
+- IntelliJ IDEA / Android Studio
 - JUnit
 - UML
-- Markdown
+- Markdown / Obsidian
 
 ## Note
 
