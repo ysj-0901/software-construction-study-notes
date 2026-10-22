@@ -15,6 +15,11 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 | 6 | [Android](notes/week-06-android.md) | Activities, intents, layouts, event listeners, adapters and pair programming |
 | 7 | [Refactoring and B-Trees](notes/week-07-refactoring-and-b-trees.md) | SOLID, code smells, B-tree properties, insertion and deletion |
 
+### Worked examples
+
+- [Red-Black Tree Insertion — Diagrams, Java and Exercises](notes/week-03-red-black-insertion.md): LL, RR, LR, RL, red-uncle recolouring and upward repair.
+- [Runnable Java example](examples/RedBlackTreeDemo.java), including insertion traces and invariant checks.
+
 **Images:** Diagrams used in the notes are stored in the [`image`](image/) folder and embedded alongside the relevant explanations.
 
 ## Topics
@@ -36,6 +41,8 @@ These topics follow the main learning path of COMP6442 at ANU.
 ## Progress
 
 Updated with Week 2–7 notes on 5 October 2026.
+
+Added the red-black tree insertion supplement and tested Java example on 23 October 2026.
 
 This is a work in progress, and I’ll keep updating the notes as I learn more.
 

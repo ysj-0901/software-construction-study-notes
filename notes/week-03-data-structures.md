@@ -113,7 +113,16 @@ A **balanced search tree** is a Binary Search Tree (BST) whose height is guarant
 
 4. Every path to NIL has the same number of BLACK nodes.
 
-## Insertion and Rotation: See Slides
+## Insertion and Rotation
+
+See [Red-Black Tree Insertion: Worked Diagrams, Java and Exercises](week-03-red-black-insertion.md).
+
+- Insert as in a BST and initially colour the new node RED.
+- If its parent is RED, inspect the uncle: recolour and move up for a RED uncle;
+  otherwise use LL/RR/LR/RL rotations with recolouring.
+- Finally ensure the root is BLACK.
+
+### Why the height remains logarithmic
 
 No consecutive reds
         ↓
