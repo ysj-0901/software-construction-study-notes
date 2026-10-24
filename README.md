@@ -20,7 +20,11 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 - [Red-Black Tree Insertion — Diagrams, Java and Exercises](notes/week-03-red-black-insertion.md): LL, RR, LR, RL, red-uncle recolouring and upward repair.
 - [Runnable Java example](examples/RedBlackTreeDemo.java), including insertion traces and invariant checks.
 
-**Images:** Diagrams used in the notes are stored in the [`image`](image/) folder and embedded alongside the relevant explanations.
+### Topic supplements
+
+- [Tokenisers and Parsers](notes/tokenisers-and-parsers.md): lexical rules, tokenisation, grammars, parse trees, recursive descent and practice questions.
+
+**Images:** Diagrams used in the notes are stored in the `image` folder and embedded alongside the relevant explanations.
 
 ## Topics
 
@@ -43,6 +47,8 @@ These topics follow the main learning path of COMP6442 at ANU.
 Updated with Week 2–7 notes on 5 October 2026.
 
 Added the red-black tree insertion supplement and tested Java example on 23 October 2026.
+
+Added a tokenisers and parsers revision page on 24 October 2026.
 
 This is a work in progress, and I’ll keep updating the notes as I learn more.
 
