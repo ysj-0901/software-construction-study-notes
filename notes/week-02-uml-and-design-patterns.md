@@ -1,4 +1,27 @@
-# Unified Modelling Language - Building Blocks
+# Week 2: UML and Design Patterns
+
+Source: **U = `week02-uml-dp(6).pdf`**. References below use **1-based PDF viewer pages**, including the cover and administrative slides, not the slide numbers printed on the page. See the [lecture source index](lecture-source-index.md) for the complete course file mapping.
+
+Existing diagrams and detailed examples are retained below. Examples labelled **supplemental** explain a lecture concept but are not copied from a slide. Java fragments are separate examples, not one combined compilation unit; repeated class names belong to separate examples.
+
+## Exam navigation
+
+| Task or question | Read here | PDF pages |
+| --- | --- | --- |
+| Read/draw a class, interface, visibility or static member | [UML notation](#uml-notation) | U 9-11 |
+| Choose a relationship; place arrow/diamond; read multiplicity | [UML relationships](#uml-relationships) | U 14-22 |
+| Explain overriding and runtime dispatch | [Inheritance and polymorphism](#inheritance-and-polymorphism) | U 26-34 |
+| Choose a pattern from a scenario | [Pattern selector](#pattern-selector) | U 51-52, 62, 94 |
+| Factory Method / Singleton | [Creational patterns](#i-creational-patterns) | U 53-58 / 59-61 |
+| Observer / State | [Behavioural patterns](#ii-behavioural-patterns) | U 63-68 / 69-77 |
+| Template Method / Iterator | [Behavioural patterns](#ii-behavioural-patterns) | U 78-86 / 87-93 |
+| DAO / Façade / Decorator | [Structural patterns](#iii-structural-patterns) | U 95-104 / 105-109 / 110-116 |
+| Lecture practice questions | UML and pattern checks | U 35-37, 117-118 |
+
+## Unified Modelling Language: building blocks
+
+**Source: U 7-8.** UML describes a system from different perspectives: things, relationships and diagrams. It supports forward design and documentation/reverse engineering; a class diagram does not specify every algorithmic step.
+
 Things (abstraction/elements that will be modelled)
 Relationships (relate things/tie them together)
 Diagrams (graphical representation of a set of elements (things and relationships))
@@ -20,11 +43,31 @@ e.g.
 ![Study note diagram](../image/Pasted%20image%2020260817003039.png)
 
 
+## UML notation
+
+**Source: U 9-11.** A class box has compartments for its name, attributes and operations.
+
+| Notation | Meaning |
+| --- | --- |
+| `-name: String` | Private attribute with its type |
+| `+find(id: int): Item` | Public operation, named parameter and return type |
+| `+`, `-`, `#`, `~` | Public, private, protected, package visibility |
+| Underlined member | Static/class member |
+| Italic class name or operation | Abstract class or operation |
+| `<<interface>>` | Interface stereotype |
+| `= initialValue` | Optional initial attribute value |
+
+Java package visibility is the default when no access modifier is supplied. For an exam diagram, include only relevant attributes and operations, but keep names, types, visibility and relationships consistent with the code.
+
 ## UML Relationships
+
+**Source: U 14-22.**
 
 UML relationships describe **how classes or objects are connected**.
 
 ### 1. Generalisation / Inheritance
+
+**Source: U 14-16, 26-29.**
 - **Meaning:** one class is a specialised version of another.
 - **Relationship:** `is-a`
 - Subclass inherits the superclass's:
@@ -42,6 +85,8 @@ UML relationships describe **how classes or objects are connected**.
 
 
 ### 2. Association
+
+**Source: U 17, 19.** A solid line represents an association. An optional navigability arrow indicates the direction in which an object can navigate to the other.
 - **Meaning:** a structural relationship between objects/classes.
 - Objects are connected for an ongoing purpose.
 - Often includes **multiplicity** (`1`, `0..*`, `1..*`, etc.).
@@ -53,6 +98,8 @@ UML relationships describe **how classes or objects are connected**.
 
 
 ### 3. Dependency
+
+**Source: U 17-18.** Use a dashed arrow pointing from the dependent/client to the class it uses.
 - **Meaning:** one class temporarily **uses/depends on** another.
 - Usually through:
   - method parameters
@@ -79,6 +126,8 @@ public class CarFactory {
 
 
 ### 4. Aggregation
+
+**Source: U 17, 21.**
 - **Meaning:** weak whole–part relationship.
 - Relationship: `has-a / is-part-of`
 - The part **can exist independently** of the whole.
@@ -102,6 +151,8 @@ class Car {
 
 
 ### 5. Composition
+
+**Source: U 17, 20.**
 - **Meaning:** strong whole–part relationship.
 - The part's lifecycle depends on the whole:
   **parts live and die with the whole**.
@@ -125,6 +176,20 @@ public class Order {
 }
 ```
 
+### Interface realisation
+
+**Source: U 16.** Java `implements` maps to a **dashed line with a hollow triangle pointing to the interface**. Java `extends` between classes maps to a **solid line with a hollow triangle pointing to the superclass**. Do not confuse a realisation triangle with a dependency arrow.
+
+### Relationship exam checks
+
+**Sources: U 18-21; implementation cautions below are explanatory supplements.**
+
+- A stored reference usually supports an association. A parameter or local use commonly supports a dependency.
+- A field alone does not prove aggregation or composition: explain whether it represents a whole-part relationship and who owns the part's lifecycle.
+- Put the diamond at the **whole**, not the part. Composition means exclusive ownership in the model; aggregation permits an independently existing part.
+- `private` alone does not establish composition. Consider whether parts are created, shared or exposed externally.
+- Java garbage collection depends on reachability. A UML composition relationship does not cause immediate or guaranteed garbage collection at a particular time.
+
 ### Summary
 
 
@@ -132,6 +197,17 @@ public class Order {
 
 
 ### Multiplicity
+
+**Source: U 22.** The label at the **B end** says how many B instances may relate to **one A**; read the other end separately.
+
+| Label | Number of related instances |
+| --- | --- |
+| `1` | Exactly one |
+| `0..1` | Zero or one |
+| `*` or `0..*` | Zero or more |
+| `1..*` | One or more |
+
+For the lecture's Employee–Organization association, `1` at Organization means each employee works for one organization; `0..*` at Employee means an organization may have zero or more employees.
 
 
 ![Study note diagram](../image/Pasted%20image%2020260817011113.png)
@@ -147,12 +223,19 @@ public class Order {
 | Aggregation  | **has-a, independent part** | Car → Engine            |
 | Composition  | **owns part + lifecycle**   | Order → Item            |
 
-### Sequence Diagram
-### Use Case Diagram
-and many others!
+Sequence and use case diagrams are listed among UML diagram types in **U 8**. This lecture's detailed notation coverage focuses on class diagrams.
+
+## Inheritance and polymorphism
+
+**Source: U 26-34.** Inheritance reuses and extends class features. Polymorphism lets an operation behave differently through a common reference type.
+
+For the lecture example `Car f1 = new Ferrari();`, the compiler checks that the method is available through `Car`; an overridden instance method such as `maxSpeed()` runs the `Ferrari` implementation. A `final` method cannot be overridden. Do not infer runtime method behaviour from the reference type alone.
 
 
-# Design Patterns
+
+## Design Patterns
+
+**Source: U 43, 47-51.**
 **Design patterns are reusable, general solutions to common software design problems.** They are not ready-made code, but templates that guide how to structure a solution.
 
 >main benefits:
@@ -170,6 +253,8 @@ and many others!
 > **Design pattern = common design problem + reusable generic solution.**
 
 ## Design Pattern Classification
+
+**Source: U 51-52, 62, 94.** Class scope uses inheritance; object scope uses object collaboration/composition. Patterns must fit the problem and constraints.
 - Creational
 - Behavioural
 - Structural
@@ -178,13 +263,35 @@ and many others!
 ![Study note diagram](../image/Pasted%20image%2020260822013050.png)
 
 
+## Pattern selector
+
+| Scenario clue | Pattern | Essential structure | PDF pages |
+| --- | --- | --- | --- |
+| Select which concrete product to create | Factory Method / lecture factory example | Product interface; creation delegated to factory/creator | U 53-58 |
+| Exactly one shared instance | Singleton | Private constructor, static instance and accessor | U 59-61 |
+| Notify a changing set of subscribers | Observer | Subject maintains observers and calls `update` | U 63-68 |
+| Same operation behaves differently in different states | State | Context delegates to its current state object | U 69-77 |
+| Fixed algorithm order, variable steps | Template Method | Superclass skeleton calls overridable steps | U 78-86 |
+| Traverse while hiding storage representation | Iterator | Collection creates iterator with traversal position | U 87-93 |
+| Separate business logic from storage details | DAO | Client uses data-access interface and implementation | U 95-104 |
+| One simple entry point to several subsystem operations | Façade | Facade coordinates subsystem collaborators | U 105-109 |
+| Add stackable features to one object | Decorator | Wrapper implements and contains the component type | U 110-116 |
+
+For a design question: **identify the problem, choose the pattern, map participant roles to the scenario, show their interaction, and explain the benefit**. This answer structure is a revision aid, not a stated marking rubric.
+
 ## I. Creational Patterns
+
+**Source: U 52.**
 - Focus on **how objects are created**.
 - Hide or abstract the object creation process from the rest of the system.
 - Help make the system less dependent on specific classes or creation details.
 - **Class-based creational patterns** use **inheritance** to decide what class gets instantiated.
 - **Object-based creational patterns** delegate object creation to **another object**.
 ### 1. Factory Method
+
+**Source: U 53-58; exercise U 117.**
+
+**Terminology note:** U 53 gives the GoF definition involving creator subclasses. U 55-57 then uses a central `NotificationFactory` with conditional selection and calls it Factory Method. Keep the lecture label when locating this example, while recognising that its implementation is a simple conditional factory rather than creator-subclass dispatch.
 
 The **Factory Method** pattern defines an interface for creating objects while allowing the actual object type to be decided separately.
 
@@ -223,33 +330,20 @@ new PushNotification();
 
 object creation is handled by a `NotificationFactory`.
 
-Conceptually:
+The client uses `NotificationFactory`; the factory creates one of three implementations of the common `Notification` interface.
 
-                    Notification
-
-                    <<interface>>
-
-                        ▲
-
-            ┌────────────┼────────────┐
-
-            │            │            │
-
-   SMSNotification EmailNotification PushNotification
-
-  
-
-NotificationService
-
-        │
-
-        ▼
-
-NotificationFactory
-
-        │
-
-        └── creates a Notification
+```mermaid
+classDiagram
+    class Notification {
+        <<interface>>
+        +notifyUser()
+    }
+    Notification <|.. SMSNotification
+    Notification <|.. EmailNotification
+    Notification <|.. PushNotification
+    NotificationFactory ..> Notification : creates
+    NotificationService ..> NotificationFactory : uses
+```
 
 The client therefore works mainly with the `Notification` interface rather than concrete notification classes.
 
@@ -326,6 +420,10 @@ even though their implementations are different.
 The factory contains the logic that decides which concrete notification object to create.
 ```java
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Random;
+
 public class NotificationFactory {
     public Notification createNotification(String msg, String c) {
         String channel = c;
@@ -382,7 +480,11 @@ notification.notifyUser();
 ---
 
 
+Before dereferencing the returned notification, consider the unsupported-channel case: the lecture implementation returns `null`. U 58 asks for a payment factory that fails on an unsupported type; an explicit exception is one possible implementation choice. The lecture example accepts `msg` but does not actually use it.
+
 ### 2. Singleton
+
+**Source: U 59-61.**
 intent: ensures a class only has exactly one instance, and provides a global point of access to it
 ```java
 
@@ -423,11 +525,17 @@ public class SingletonTest {
     }
 }
 ```
+**Supplemental implementation caution:** this lazy `getInstance()` is not thread-safe; concurrent calls can create more than one object. The lecture code illustrates the basic structure, not concurrent singleton construction. A static getter alone does not ensure a singleton without restricted construction and shared instance storage.
+
 ## II. Behavioural Patterns
+
+**Source: U 62.**
 - Behavioural patterns organise how responsibilities and interactions are distributed between objects, helping avoid one giant class full of complicated control logic.
 - **Behavioural class patterns** use inheritance to distribute behaviour between classes.
 - **Behavioural object patterns** use composition, where several objects cooperate to perform a task.
 ### 1. Observer
+
+**Source: U 63-68.**
 Define a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
 Use Observer when:
@@ -560,24 +668,16 @@ public class ObserverDemo {
 
 **Key Idea**
 
-```text
-Subject
-   │
-   ├── Observer 1
-   ├── Observer 2
-   └── Observer 3
-
-Subject changes
-      ↓
-notifyAllObservers()
-      ↓
-each Observer.update()
-```
+When the subject changes, it calls `notifyAllObservers()`, which invokes `update(...)` on each current subscriber. After `p1.detach(c1)`, the next notification from `p1` reaches John but not Dylan [U 67-68].
 
 The **Subject does not need to know the concrete type of its observers** — it only knows that they implement `Observer`. This keeps the objects loosely coupled.
 
 In the Observer Pattern, the **observers depend on the subject for notifications**.
 ### 2. State
+
+**Source: U 69-77.** The lecture's concrete example is `UserSession`, which holds a `UserState`. `NoSessionState.login(...)` changes it to `SessionState`; `SessionState.logout()` changes it back. `UserSession.createPost(...)` delegates to the current state, so the same operation is allowed or rejected according to the active state.
+
+The role-based and animal examples below are **supplemental analogies**. Roles are a suitable State analogy only when they represent changeable context state governing behaviour; ordinary access-control roles alone do not require this pattern.
 >The state pattern allows an object to change its behaviour based on internal or external events.
 
 >Instead of writing lots of `if/else` or `switch` statements for different states, put each state’s behaviour into its own class.
@@ -618,14 +718,7 @@ that all implement or extend a common type, such as:
 UserState
 ```
 
-Conceptually:
-
-```
-            UserState
-           /    |     \
-          /     |      \
- GuestState MemberState AdminState
-```
+`GuestState`, `MemberState`, and `AdminState` implement a common `UserState` interface. The context stores one current state object and delegates to it.
 
 Then some main object, often called the **context**, stores the current state:
 
@@ -768,16 +861,17 @@ but the behaviour changes because the current `state` object changes.
 
 ###### Structure
 
-```text
-             Animal
-               |
-               | has a
-               v
-          AnimalState
-         /     |      \
-        /      |       \
- Sleeping   Hungry    Playing
-  State      State      State
+```mermaid
+classDiagram
+    direction TB
+    Animal --> AnimalState : current state
+    class AnimalState {
+        <<interface>>
+        +makeSound()
+    }
+    AnimalState <|.. SleepingState
+    AnimalState <|.. HungryState
+    AnimalState <|.. PlayingState
 ```
 
 - `Animal` → Context
@@ -812,6 +906,10 @@ same object
 = different behaviour
 ```
 ### 3. Template Method
+
+**Source: U 78-86.** The lecture uses `ActionReport.generateReport(...)`: **read data → parse content → count actions**, with `CsvActionReport` and `XmlActionReport` overriding parsing. The shared algorithm determines the sequence; subclass implementations supply selected steps. A hook may provide a default implementation; an abstract step must be implemented.
+
+The animal-care example below is **supplemental**. Its `final` template method explicitly prevents overriding the sequence; the lecture's `generateReport` example does not use `final`.
 >Define the skeleton of an algorithm in an operation, deferring some steps to subclasses.
 
 >Template Method lets subclasses redefine certain steps of an algorithm without changing the
@@ -880,15 +978,17 @@ public class Main {
     }
 }
 ```
-AnimalCare
-    |
-    |-- careForAnimal()   ← template method
-          |
-          |-- feed()      ← subclass decides
-          |-- clean()     ← shared implementation
-          |-- exercise()  ← subclass decides
-          
+| Step in `careForAnimal()` | Implementation |
+| --- | --- |
+| `feed()` | Subclass supplies behaviour |
+| `clean()` | Shared superclass implementation |
+| `exercise()` | Subclass supplies behaviour |
+
 ### 4. Iterator
+
+**Source: U 87-93.**
+
+**API distinction:** the lecture defines its own `Iterator` interface, whose example `next()` returns `null` when exhausted. Java's standard `java.util.Iterator.next()` instead throws `NoSuchElementException` when exhausted. Do not silently treat the lecture's simplified API as the standard library contract.
 The **Iterator Pattern** allows a client to traverse elements in a collection **without exposing the collection's internal data structure**.
 
 > Collection stores the data; Iterator controls how the data is traversed.
@@ -1012,22 +1112,7 @@ Name : Friend_3
 
 ##### How It Works
 
-```text
-Client
-   |
-   | createIterator()
-   v
-FriendsConcreteCollection
-   |
-   | creates
-   v
-FriendsConcreteIterator
-   |
-   | hasNext()
-   | next()
-   v
-Friend_1 → Friend_2 → Friend_3
-```
+The client asks `FriendsConcreteCollection` to create a `FriendsConcreteIterator`, then calls `hasNext()` and `next()` to visit `Friend_1`, `Friend_2`, and `Friend_3` in order.
 
 The client does **not** access:
 
@@ -1088,20 +1173,44 @@ Client     → uses the iterator
 ```
 
 ## III. Structural Patterns
+
+**Source: U 94.**
 ### 1. DAO (Data Access Object)
-DAO handles reading and saving data so the rest of your app does not need to know the storage details. 
+
+**Source: U 95-104.** DAO handles reading and saving data so the rest of the app does not need to know storage details. The lecture classifies DAO as structural; it is not one of the original GoF 23 patterns.
+
+| Participant | Lecture example | Responsibility |
+| --- | --- | --- |
+| Data/entity object | `UserActivity` | Carries username, action, content and post ID |
+| DAO interface | `UserActivityDaoInterface` | Declares operations such as `createPost`, `likePost`, `findAllPosts`, `deleteAll` |
+| Concrete DAO | `UserActivityDao` | Implements the operations using a CSV file |
+| Client/business code | State/session functionality | Calls DAO operations instead of performing CSV I/O itself |
+
+Changing CSV to XML should primarily change the persistence implementation behind a stable interface; avoid embedding format-specific parsing throughout client code. In the lecture, the concrete DAO also uses **Singleton**; this is a combination of two patterns, not a requirement of DAO. The exposed `getFilePath()` is an example-specific detail and ties some report functionality to file-based storage.
+
+**Exam distinction:** a data object stores/transfers values; the DAO provides access operations. A factory selects/creates a DAO, whereas the DAO reads/writes data.
 
 ### 2. Façade
+
+**Source: U 105-109.** Lecture example: `UserFacade.createPost(...)` coordinates **login → create post → generate report → logout → return `UserDto`**. The client calls one high-level operation. The façade reduces coupling to a collection of subsystem classes and does not require inheritance or polymorphism.
+
+The computer example below is **supplemental** and assumes the collaborators' `start`, `load` and `read` methods exist.
 - **Client** → uses the **Facade**
 - **Facade** → communicates with several subsystem classes
 - The client does not need to understand or coordinate all those classes itself
-- 
+
 For example, starting a computer may require several operations:
 ```java
 class ComputerFacade {
     private CPU cpu;
     private Memory memory;
     private HardDrive hardDrive;
+
+    public ComputerFacade(CPU cpu, Memory memory, HardDrive hardDrive) {
+        this.cpu = cpu;
+        this.memory = memory;
+        this.hardDrive = hardDrive;
+    }
 
     public void startComputer() {
         cpu.start();
@@ -1119,6 +1228,8 @@ computerFacade.startComputer();
 A Facade provides one simple interface to a complicated collection of classes.
 The subsystem still exists and does the real work; the facade merely makes it easier to use.
 ### 3. Decorator
+
+**Source: U 110-116.** Lecture example: `Pizza`, `PlainPizza`, `PizzaDecorator`, and concrete cheese/pepperoni/mushroom/olive decorators. Each wrapper holds a `Pizza` and implements the same interface. For example, cost delegates to the wrapped pizza and adds the topping cost. The juice example below is **supplemental**.
 The **Decorator Pattern** lets us **add or modify an individual object’s behaviour at runtime by wrapping it**, without changing the original class or interface.
 
 Use it when you want to:
@@ -1227,8 +1338,18 @@ public class Main {
 ```
 
 
-CarrotDecorator 
-↓ wraps 
-SugarDecorator
-↓ wraps 
-OrangeJuice
+The final wrapper structure is equivalent to `new CarrotDecorator(new SugarDecorator(new OrangeJuice()))`: method calls delegate inward and each wrapper contributes its extra description and price.
+
+
+## Final comparison and exam traps
+
+**Source navigation: U 117-118; comparisons synthesise the cited pattern sections.**
+
+- **Factory vs Singleton:** choose what to create vs ensure one instance. Neither implies the other.
+- **State vs Template Method:** replace the current delegate to change state-specific behaviour vs subclass particular steps of one algorithm skeleton.
+- **Observer vs Iterator:** broadcast changes to subscribers vs traverse elements on client request.
+- **DAO vs Façade:** isolate persistence operations vs simplify/co-ordinate subsystem operations. A façade can call a DAO.
+- **Decorator vs Façade:** preserve a component interface while adding behaviour vs provide a simpler, higher-level subsystem interface.
+- A product type may be an interface **or a superclass**. U 117's claim that `Notification` cannot be a superclass is the incorrect alternative.
+- U 118 asks for one instance and weak subsystem/client coupling respectively: **Singleton and Façade**.
+- Check ownership, arrow direction, multiplicity and required methods before naming a pattern from a diagram. Similar-looking class structures can serve different intentions.

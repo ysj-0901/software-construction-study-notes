@@ -16,7 +16,15 @@ tags:
 > **SOLID:** design classes and interfaces that are easier to maintain, extend and test.
 > **B-tree:** a balanced multiway search tree that reduces disk accesses by storing multiple keys per node.
 
-Source: *Week 07 - B-trees Refactoring - COMP2100/6442, Semester 2 2026*. References below use the printed slide numbers. Clarifications are labelled where the slides simplify a rule.
+Source: **R = `Week 07 - B-trees Refactoring - COMP2100_6442 - Semester 2 2026 (2)(4).pdf`**. All references below use **1-based PDF pages, counting the cover as page 1**, not printed slide labels. See the [lecture source index](lecture-source-index.md). Clarifications and supplemental examples are labelled where they go beyond the slides.
+
+| Topic | PDF pages |
+| --- | --- |
+| Refactoring definition, goals, workflow | R4–12 |
+| SOLID: SRP / OCP / LSP / ISP / DIP | R14–18 / R19–27 / R28–34 / R35–38 / R39–41 |
+| DRY, KISS, smells and defensive copies | R42–57 |
+| B-tree purpose, order, height and capacity | R60–67 |
+| Search / insertion / deletion | R68 / R69–73 / R75–80 |
 
 ## 1. Refactoring
 
@@ -45,7 +53,7 @@ The lecture connects refactoring with the Agile values: individuals and interact
 
 **Definition of done:** structure improved, no new functionality, all existing tests pass.
 
-*Slides 4–12.*
+*Source: R4–12.*
 
 ## 2. SOLID principles
 
@@ -59,6 +67,8 @@ The lecture connects refactoring with the Agile values: individuals and interact
 
 ### Coupling and single responsibility
 
+*Source: R15–18.*
+
 **Coupling** = how strongly one component depends on another.
 
 - **High coupling:** changing one component can force changes elsewhere.
@@ -67,6 +77,8 @@ The lecture connects refactoring with the Agile values: individuals and interact
 
 ### Open–closed principle
 
+*Source: R19–27.*
+
 Use a stable interface or base class so new implementations can be added without changing existing client logic.
 
 **Warning sign:** every new account type or football-player role requires another branch in the same client `switch`.
@@ -74,6 +86,8 @@ Use a stable interface or base class so new implementations can be added without
 **Typical fix:** move type-specific behaviour into implementations of a common abstraction.
 
 ### Liskov substitution: preserve the contract
+
+*Source: R28–34.*
 
 Inheritance alone does not guarantee substitutability. Code using the parent type should continue working correctly with a subtype.
 
@@ -93,6 +107,8 @@ Example: if `withdraw(amount)` is promised by an account abstraction, a fixed-te
 
 ### Interface segregation
 
+*Source: R35–38.*
+
 The lecture's `Bird` abstraction requires both `layEggs()` and `fly()`. A cassowary cannot satisfy the flying requirement.
 
 - `Oviparous`: declares `layEggs()`.
@@ -103,6 +119,8 @@ The lecture's `Bird` abstraction requires both `layEggs()` and `fly()`. A cassow
 **ISP focuses on interface size and relevance; LSP focuses on behavioural substitutability.** The same poor design can violate both.
 
 ### Dependency inversion
+
+*Source: R39–41.*
 
 High-level application logic and low-level storage implementations both depend on an abstraction.
 
@@ -126,7 +144,7 @@ class Program {
 
 `JSON` and `XML` implement `DAO`; either can be passed to `Program` without rewriting it. Passing the dependency through the constructor is **constructor injection**; depending on `DAO` is **dependency inversion**.
 
-*Slides 13–42; code condensed and Java syntax corrected.*
+*Source: R13–41; code is a condensed supplemental example with corrected Java syntax.*
 
 ## 3. DRY, KISS and code smells
 
@@ -157,7 +175,7 @@ List<Person> localPersons = new ArrayList<>(persons);
 > **Shallow-copy clarification**
 > This copies the list structure, **not its `Person` objects**. Adding/removing elements in the copy does not change the original list, but modifying a shared mutable `Person` can affect both. Copy individual objects too if independent object state is required.
 
-*Slides 43–58.*
+*Source: R42–57. The shallow-copy explanation clarifies the example on R56.*
 
 ## 4. B-trees: purpose and properties
 
@@ -189,7 +207,7 @@ A root that is also a leaf has no children; an empty tree may have zero keys.
 **Order 5:** maximum 5 children / 4 keys; non-root minimum 3 children for internal nodes / 2 keys.
 
 > **Minimum-key formula**
-> Use **$\lceil m/2\rceil-1$**, consistent with the formal definition and slide 67. Some other slides use informal “$m/2$ keys” wording. An underflow means fewer than $\lceil m/2\rceil-1$ keys in a non-root node.
+> Use **$\lceil m/2\rceil-1$**, consistent with the formal definition on R64 and minimum-key formula on R66. Some other slides use informal “$m/2$ keys” wording. An underflow means fewer than $\lceil m/2\rceil-1$ keys in a non-root node.
 
 ### Height and capacity
 
@@ -209,11 +227,13 @@ Example: order $5$, height $2$ gives **17–124 keys**.
 
 The tree remains balanced because every leaf is at the same depth. For fixed order, its height grows logarithmically with the number of keys.
 
-*Slides 60–68.*
+*Source: R60–67. The order-5 height-2 calculation is a supplemental worked example.*
 
 ## 5. B-tree operations
 
 ### Search
+
+*Source: R68; the numeric interval example below is supplemental.*
 
 1. Search among the current node's sorted keys; binary search is useful for large nodes.
 2. If the key is found, stop.
@@ -223,6 +243,8 @@ The tree remains balanced because every leaf is at the same depth. For fixed ord
 For a node `[20, 50]`: the left subtree holds values below 20, the middle holds values between 20 and 50, and the right holds values above 50, assuming distinct keys.
 
 ### Insertion: overflow → split → promote
+
+*Source: R69–73.*
 
 1. Find the appropriate leaf and insert the key in sorted order.
 2. If it has at most $m-1$ keys, finish.
@@ -244,6 +266,8 @@ Following the lecture's split convention, promote the key at 1-based position $\
 
 ### Deletion: remove → repair underflow
 
+*Source: R75–80, with occupancy clarified using R64/R66.*
+
 1. If the target is internal, replace it with its **predecessor** (largest key in its left subtree) or **successor** (smallest key in its right subtree).
 2. Remove that replacement key from its original leaf position.
 3. If a non-root node has fewer than $t-1$ keys, repair it by borrowing or merging.
@@ -260,14 +284,41 @@ Following the lecture's split convention, promote the key at 1-based position $\
 - If the root becomes empty with one child, that child becomes the root; **height decreases by 1**.
 - For internal-node repair, move the relevant child pointers as well.
 
-**Small order-5 examples** (minimum 2 keys per non-root node):
+**Lecture order-5 examples [R77–78]** (minimum 2 keys per non-root node):
 
 | Case | Before deletion | After repair |
 | --- | --- | --- |
 | Merge after deleting 5 | Root `[10, 20]`; children `[2, 5]`, `[13, 14]`, `[22, 24]` | Root `[20]`; children `[2, 10, 13, 14]`, `[22, 24]` |
 | Borrow after deleting 22 | Root `[20]`; children `[2, 10, 13, 14]`, `[22, 24]` | Root `[14]`; children `[2, 10, 13]`, `[20, 24]` |
 
-*Slides 69–81. Deletion conditions above use the formal occupancy bounds.*
+*Source: R68–80. Deletion conditions above use the formal occupancy bounds on R64/R66; the informal thresholds on R76–78 should not override those bounds.*
+
+### Supplemental order-3 trace
+
+Order 3 permits **1–2 keys in each non-root node**, and an internal node has one more child than keys. The following small examples apply R64/R66/R69/R75–78; they are independently constructed.
+
+| Operation | Root | Children, from left to right | Explanation |
+| --- | --- | --- | --- |
+| Insert 10, then 20 | `[10,20]` | None | Root is a leaf and still within capacity |
+| Insert 30 | `[20]` | `[10]`; `[30]` | Three-key overflow: promote 20 |
+| Insert 40 | `[20]` | `[10]`; `[30,40]` | Leaf has room |
+| Insert 50 | `[20,40]` | `[10]`; `[30]`; `[50]` | Split the right leaf and promote 40 |
+| Delete 10 from the preceding tree | `[40]` | `[20,30]`; `[50]` | Empty left child cannot borrow from `[30]`; merge with separator 20 |
+
+**Separate borrowing example:** start with root `[20]`, left child `[10]`, right child `[30,40]`. Deleting 10 leaves the left child empty. Move parent separator 20 down into it and move sibling's smallest key 30 up: root becomes `[30]`, with children `[20]` and `[40]`. The parent's key count is unchanged.
+
+**Root-collapse example:** root `[20]` with children `[10]` and `[30]`; delete 10. Merge the empty left child, separator 20, and `[30]` into `[20,30]`. The old root now has no keys and one child, so `[20,30]` becomes the new root and height falls from 1 to 0.
+
+### Common B-tree mistakes
+
+- **Order is not key count:** order `m` permits `m−1` keys per node.
+- A non-leaf node with **one key has two children**, not three. A node containing `[5]` therefore cannot directly own `[3]`, `[8,10]`, and `[12]` as three children.
+- **Supplemental correction:** with keys `3,5,8,10,12` in an order-3 tree, root `[5,10]` and children `[3]`, `[8]`, `[12]` is valid. Each child lies in its separator range.
+- Split/promote and merge/borrow must move **child pointers** as well as keys for internal nodes.
+- Borrowing moves a separator **through the parent**, rather than copying a sibling key directly across.
+- Check all leaves stay at the same depth, including after a root split or root collapse.
+
+These reminders apply the invariants on R64/R66 and update procedures on R69/R75–80. For fixed order, search, insert and delete take `O(log n)` time. With a variable order, distinguish tree height/page accesses from the work of scanning or shifting keys inside a node.
 
 ## 6. Quick revision checklist
 
@@ -280,14 +331,15 @@ Following the lecture's split convention, promote the key at 1-based position $\
 - [ ] Trace search, insertion splits, deletion borrowing and merging.
 - [ ] Explain why a B-tree reduces disk accesses.
 
-**Slide 75 practice:** insert `20, 11, 15, 3, 5, 7, 12, 15, 16, 19, 25, 30, 33, 37, 22, 23, 26, 31, 42, 35, 6, 47` using orders 3 and 5; determine the final height. The sequence repeats `15`; establish the expected duplicate-key policy before solving.
+**R74 practice (printed slide 75):** insert `20, 11, 15, 3, 5, 7, 12, 15, 16, 19, 25, 30, 33, 37, 22, 23, 26, 31, 42, 35, 6, 47` using orders 3 and 5; determine the final height. The sequence repeats `15`; establish the expected duplicate-key policy before solving.
 
-## Assessment reminder from this deck
+## Historical assessment reminder from this deck
 
-According to **slide 3**:
+The following describes the **9 October hackathon**, not the final examination. According to **R3**:
 
-- **Hackathon 1:** Friday 9 October 2026, 2–6 pm, Melville Hall G01; teams of 5.
+- **Hackathon:** Friday 9 October 2026, 2–6 pm, Melville Hall G01; teams of 5.
 - **Coverage:** through Week 8 inclusive, excluding Android Studio.
 - **Marking:** 80% individual + 10% group task + 10% average of the top two other team members' individual scores.
 - Bring a charged device with the necessary course software.
 - **“No GenAI”**; course staff must be able to see your screen.
+

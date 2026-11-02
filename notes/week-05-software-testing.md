@@ -1,6 +1,10 @@
 # Week 5 — Software Testing
 
+[Lecture source index and PDF-page navigation](lecture-source-index.md) · **Source key T:** `week05-testing(2).pdf`. References use **1-based PDF viewer pages, including the cover**, not printed slide numbers. Worked examples identified as supplemental are original study aids, not claims about examination coverage.
+
 ### 1. Overview
+
+**Lecture reference:** T pp. 6–11.
 
 #### What is Software Testing?
 - Software testing checks whether software **behaves as expected**.
@@ -58,6 +62,8 @@ Testing → increases confidence
 
 ### 2. Black-Box vs White-Box Testing
 
+**Lecture reference:** T pp. 13–16.
+
 #### Black-Box Testing
 
 Black-box testing creates test cases based on the **functional requirements** of the software without looking at the internal implementation.
@@ -105,6 +111,8 @@ Black box → requirements tell us what to test
 White box → code structure tells us what to test
 ```
 ### 3. Unit Testing and JUnit 4
+
+**Lecture reference:** T pp. 17–40.
 
 #### Unit Testing
 
@@ -164,6 +172,8 @@ All `@Test` methods in the test class are run by JUnit.
 
 #### Common Assertions
 
+**Lecture reference:** T pp. 21–23.
+
 ```
 assertTrue(condition);
 assertFalse(condition);
@@ -199,11 +209,13 @@ assertSame(a, b)
 
 #### `assertEquals()` vs `assertSame()`
 
-`assertEquals()` usually compares values using:
+For object arguments, `assertEquals()` compares equality using:
 
 ```
 equals()
 ```
+
+If a class does not override `Object.equals()`, its default equality is reference identity. Primitive `assertEquals` overloads compare primitive values.
 
 `assertSame()` compares references using:
 
@@ -238,6 +250,8 @@ s1 and s3
 
 #### Floating-Point Assertions
 
+**Lecture reference:** T p. 24.
+
 Floating-point numbers may contain tiny representation errors.
 
 Therefore use:
@@ -261,6 +275,8 @@ assertEquals(
 ---
 
 #### `@Before` and `@After`
+
+**Lecture reference:** T pp. 27–28.
 
 ```
 @Before
@@ -306,9 +322,13 @@ Useful for:
 - Preparing arrays/data structures
 - Cleaning up resources
 
+Setting a field to `null` only removes that reference; it does not immediately free memory or close a file/database connection. Explicitly close external resources when appropriate (implementation clarification of T p. 27).
+
 ---
 
 #### `@BeforeClass` and `@AfterClass`
+
+**Lecture reference:** T pp. 29–30.
 
 These run once for the **entire test class**.
 
@@ -352,6 +372,8 @@ Useful for expensive shared resources such as database connections.
 
 #### Testing Exceptions
 
+**Lecture reference:** T p. 31.
+
 JUnit can check whether an exception is expected.
 
 ```
@@ -371,6 +393,8 @@ does not throw exception    → FAIL
 ---
 
 #### Timeouts
+
+**Lecture reference:** T p. 32.
 
 A test can fail if execution takes too long.
 
@@ -396,6 +420,8 @@ Useful for:
 
 #### Parameterized Tests
 
+**Lecture reference:** T pp. 33–34.
+
 Parameterized testing runs the **same test logic with multiple inputs**.
 
 Example input sets:
@@ -410,6 +436,8 @@ Instead of writing many almost identical test methods, one test is repeatedly ex
 ---
 
 #### Test Suite
+
+**Lecture reference:** T p. 35.
 
 A test suite combines multiple test classes.
 
@@ -428,6 +456,8 @@ public class FeatureTestSuite {
 ---
 
 #### Unit Testing Guidelines
+
+**Lecture reference:** T pp. 36–37, 40.
 
 Good unit tests should:
 
@@ -454,6 +484,8 @@ Example:
 
 #### Test-Driven Development — TDD
 
+**Lecture reference:** T pp. 38–39.
+
 TDD reverses the usual order.
 
 Instead of:
@@ -478,9 +510,11 @@ The test is written before the feature is implemented.
 
 ### 4. Integration and System Testing
 
+**Lecture reference:** T pp. 42–48.
+
 #### Integration Testing
 
-Integration testing happens after individual units have been tested.
+Integration testing combines units and checks their interactions; the lecture presents it after unit testing.
 
 It checks whether multiple units work correctly **together**.
 
@@ -577,6 +611,8 @@ whole system
 
 ### 5. Statement Coverage
 
+**Lecture reference:** T pp. 50–57.
+
 Code coverage measures how much code is exercised by a test suite.
 
 Statement coverage asks:
@@ -638,6 +674,8 @@ Line coverage ≠ Statement coverage
 A single line may contain several statements.
 
 ### 6. Branch Coverage
+
+**Lecture reference:** T pp. 58–61.
 
 Branch coverage checks whether every possible branch of each decision has been executed.
 
@@ -731,143 +769,74 @@ bug-free program
 
 ### 7. Condition and Multiple-Condition Coverage
 
+**Lecture reference:** T pp. 62–67.
+
 #### Condition Coverage
 
-Condition coverage becomes important when one decision contains multiple conditions.
+A decision may contain several **atomic conditions**, such as `A` and `B` in `if (A || B)`. Condition completeness asks whether each condition has actually been **evaluated to both true and false**. An input value assigned to an operand does not count as an evaluation if Java skips that operand.
 
-Example:
+T p. 62 calculates its percentage as:
 
-```
-if (A || B) {
-    ...
-}
-```
-
-There are two individual conditions:
-
-```
-A
-B
+```text
+100 × number of clauses evaluated to both true and false
+    / total number of clauses
 ```
 
-Condition coverage asks whether each condition has been evaluated as:
+Use the stated criterion and denominator when calculating a percentage; do not confuse clauses with complete decisions.
 
-```
-true
-and
-false
-```
+#### Short-Circuit Evaluation: Trace What Actually Executes
 
-So we want:
+For Java `A || B`, `B` is skipped when `A` is true. For `A && B`, `B` is skipped when `A` is false.
 
-```
-A → true and false
-B → true and false
-```
+**Supplemental worked example** applying T pp. 62–64 to Java `if (A || B)`:
 
-Important:
+| Test | A evaluated | B evaluated | Decision outcome |
+| --- | --- | --- | --- |
+| `A=true, B=false` | true | **Skipped** | true |
+| `A=false, B=true` | false | true | true |
+| `A=false, B=false` | false | false | false |
 
-```
-100% Condition Coverage
-does NOT necessarily imply
-100% Branch Coverage
-```
+All three tests cover both outcomes of both evaluated conditions and both decision outcomes. The first two alone do **not** evaluate `B` to false.
 
-For example, both `A` and `B` may individually become true and false while the complete expression:
+> **Slide clarification (T p. 63):** the slide assigns `(true,false)` and `(false,true)` to `A,B` and calls this condition-complete for `A || B`. With Java short-circuit evaluation, `B=false` in the first test is skipped. Treat the slide's example as an input truth-value illustration; use actual evaluation when tracing Java code.
 
-```
-A || B
-```
+Condition coverage and decision coverage are distinct criteria and do not imply one another in general:
 
-never becomes false.
+- **Decision without condition coverage:** for `A || B`, tests `(true,false)` and `(false,false)` cover true and false decisions, but never evaluate `B` to true.
+- **Condition without decision coverage:** in the supplemental Java example `if (A | B)`, Boolean `|` evaluates both operands. Tests `(true,false)` and `(false,true)` evaluate each condition both ways, but the decision is always true. This example deliberately uses `|`, **not** `||`.
 
-Then the `else` branch is never executed.
+#### The Lecture's “Multiple Condition” Convention
 
----
+T pp. 65–67 use the label **multiple condition coverage** for coverage of individual condition outcomes and decision outcomes, illustrated with an expanded short-circuit control-flow graph. Follow the illustrated criterion when answering a question referring to these slides; do not silently substitute a requirement to enumerate every Boolean input combination.
 
-#### Short-Circuit Evaluation
+The lecture example is:
 
-Java may skip evaluating later conditions.
-
-Example:
-
-```
-A || B
-```
-
-If:
-
-```
-A == true
-```
-
-then Java already knows:
-
-```
-A || B == true
-```
-
-so `B` may not be evaluated.
-
-Similarly:
-
-```
-A && B
-```
-
-If:
-
-```
-A == false
-```
-
-then `B` may not be evaluated.
-
-This matters when designing condition-coverage tests.
-
----
-
-#### Multiple-Condition Coverage
-
-Multiple-condition coverage considers how the compiler evaluates combinations of conditions and branches.
-
-Example:
-
-```
+```java
 if (a > 0 && c == 1) {
     X;
 }
-
 if (b == 3 || d < 0) {
     Y;
 }
 ```
 
-Tests should exercise combinations that allow the different conditions and branches to be evaluated.
+Write tests that reach each operand and exercise its true and false outcomes. Inputs for skipped operands do not add coverage. T p. 66 identifies three tests as sufficient for its illustrated criterion:
 
-Important relationship:
+| Test | `a > 0` | `c == 1` | `b == 3` | `d < 0` |
+| --- | --- | --- | --- | --- |
+| 1 | true | true | true | skipped |
+| 2 | true | false | false | true |
+| 3 | false | skipped | false | false |
 
-```
-100% Multiple-Condition Coverage
-        ↓
-100% Condition Coverage
-        +
-100% Decision/Branch Coverage
-```
+Here both decisions become true and false, and every atomic condition is evaluated to both values somewhere in the suite. This does not cover every complete path through the two decisions.
 
-Multiple-condition coverage is therefore more thorough.
-
-However:
-
-```
-100% Multiple-Condition Coverage
-does NOT guarantee
-100% Path Coverage
-```
+**Relationship in these slides:** course “multiple condition” completeness guarantees **both** condition completeness and decision completeness. It does **not** mean that condition completeness alone guarantees decision completeness.
 
 ### 8. Path Coverage
 
-Path coverage asks whether **every possible execution path** through the program has been tested.
+**Lecture reference:** T pp. 68–71.
+
+Path coverage asks whether **every feasible complete execution path** through the program has been tested. Paths that cannot occur for any valid input should not be confused with feasible paths.
 
 A path is a complete route through the control-flow graph.
 
@@ -898,6 +867,28 @@ executed paths
 ```
 
 In the lecture example, there are **6 possible paths**, so 6 suitable test cases are needed for complete path coverage.
+
+#### Worked Test Suite for the Lecture's Nested Decisions
+
+**Lecture reference:** T pp. 51–60, 68–70. The table consolidates the lecture's examples; `*` means the value is irrelevant because `b` is not evaluated when `a` is true.
+
+```java
+if (a) X;
+else {
+    Y;
+    if (b) Z;
+}
+if (c) W;
+```
+
+| Criterion | A sufficient suite `(a,b,c)` | Why |
+| --- | --- | --- |
+| Statement | `(true,true,true)`, `(false,true,true)` | Executes X, Y, Z and W; two tests are necessary to enter both sides of `a`. |
+| Branch | Add `(false,false,false)` to the statement suite | Also takes the false outcomes of `b` and `c`; six branches in total. |
+| Path | `(true,*,true)`, `(true,*,false)`, `(false,true,true)`, `(false,true,false)`, `(false,false,true)`, `(false,false,false)` | Three routes through `a/b`, each combined with two outcomes of `c`: 3 × 2 = 6. |
+
+Do not count all eight Boolean input triples as distinct paths: changing `b` when `a=true` does not change execution.
+
 
 Important relationship:
 
@@ -972,15 +963,16 @@ does not guarantee
 Multiple-condition coverage gives:
 
 ```
-100% Multiple Condition
-→ 100% Condition
-→ 100% Decision/Branch
+100% course Multiple Condition → 100% Condition
+100% course Multiple Condition → 100% Decision/Branch
 ```
 
 but still does not guarantee path coverage.
 
 ---
 ### 9. Fault Injection, Instrumentation, and Loop Testing
+
+**Lecture reference:** T pp. 72–76.
 
 #### Fault Injection
 
@@ -1122,3 +1114,4 @@ Software Testing
     ├── Multiple Condition
     └── Path
 ```
+

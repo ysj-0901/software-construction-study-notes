@@ -11,6 +11,21 @@ tags: [COMP6442, data-structures, red-black-tree, Java, revision]
 
 These notes use **conventional bottom-up red-black insertion**, not a left-leaning red-black tree (LLRB). Different valid algorithms can produce different tree shapes. All worked answers here follow the same algorithm as the accompanying Java implementation.
 
+## Lecture provenance
+
+See the [lecture source index](lecture-source-index.md). **D = `week03-data-structures(3).pdf`** and **R = the Week 7 B-trees/Refactoring PDF**. References use **1-based PDF pages**, counting the cover as page 1.
+
+| Material in this supplement | Lecture location |
+| --- | --- |
+| Red-black invariants and initially red insertion | D80,89 |
+| Left/right rotation and pointer changes | D94–95 |
+| Red uncle; inner and outer black-uncle cases; symmetry | D98–103 |
+| Black-height and worst-case complexity | D105–106 |
+| Comparison with AVL | D113–115,127–131 |
+| B-tree order and occupancy convention | R64–67 |
+
+The numerical worked examples, exercises, Mermaid diagrams, Java implementation, validation logic and 2–3–4-tree interpretation are **supplemental teaching material**, not examples claimed to appear verbatim in the slides. The core insertion algorithm agrees with D89 and D98–103. D104 explicitly states that **red-black deletion is not covered in class**; this supplement implements insertion only.
+
 ## Reading route
 
 1. Read Sections 1–3: invariants, why new nodes are red, and what a rotation actually changes.
@@ -1343,39 +1358,16 @@ The example was compiled and run under OpenJDK 17. The built-in `--self-test` pa
 
 These tests help detect implementation errors; they do not replace the correctness reasoning in Sections 2, 4.5 and 5. The example's `validate()` throws explicit exceptions and does not depend on Java assertions being enabled with `-ea`.
 
-## 11. Adding this supplement to the existing repository
+## 11. Repository integration (already completed)
 
-Add these two files:
+The repository already contains these two files:
 
 | Path | Contents |
 | --- | --- |
 | `notes/week-03-red-black-insertion.md` | These complete notes, including the embedded Java source |
 | `examples/RedBlackTreeDemo.java` | The same Java source as a directly runnable file |
 
-In `notes/week-03-data-structures.md`, replace **only this line**:
-
-```markdown
-## Insertion and Rotation: See Slides
-```
-
-with:
-
-```markdown
-## Insertion and Rotation
-
-See [Red-Black Tree Insertion: Worked Diagrams, Java and Exercises](week-03-red-black-insertion.md).
-
-- Insert as in a BST and initially colour the new node RED.
-- If its parent is RED, inspect the uncle: recolour and move up for a RED uncle;
-  otherwise use LL/RR/LR/RL rotations with recolouring.
-- Finally ensure the root is BLACK.
-```
-
-Keep the existing height proof, complexity discussion and AVL material that follow it. Optionally add this README entry:
-
-```markdown
-- [Red-Black Tree Insertion — Diagrams, Java and Exercises](notes/week-03-red-black-insertion.md)
-```
+The [Week 3 overview](week-03-data-structures.md#4-red-black-tree) links to this supplement. Keep its BST operations, height proof, complexity discussion and AVL rotation/deletion guide alongside these worked examples. The README also links to this supplement.
 
 All diagrams are embedded Mermaid blocks; no course images need to be copied. Read the file in a Markdown preview that supports Mermaid. Every tree edge has an L/R label, and the surrounding explanations describe the changes in structure and colour.
 
@@ -1395,4 +1387,5 @@ All diagrams are embedded Mermaid blocks; no course images need to be copied. Re
 - [Week 3 — Data Structures](https://github.com/ysj-0901/software-construction-study-notes/blob/main/notes/week-03-data-structures.md): BST operations, red-black properties, complexity and AVL.
 - [Week 7 — Refactoring and B-Trees](https://github.com/ysj-0901/software-construction-study-notes/blob/main/notes/week-07-refactoring-and-b-trees.md): B-tree order, insertion splits and refactoring background.
 
-Repository notes consulted on 23 October 2026. This supplement uses general data-structure algorithms and independently written examples. It is not an official course solution or a statement of examination coverage.
+Originally prepared using repository notes on 23 October 2026; lecture provenance was subsequently checked against the supplied 2026 PDFs. This supplement uses independently written examples. It is not an official course solution or a prediction of examination coverage.
+

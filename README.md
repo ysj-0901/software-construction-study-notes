@@ -4,16 +4,25 @@ This repository contains my personal study notes for software construction.
 
 I’m using it to keep track of what I learn, organise important concepts, and record my progress over time.
 
+## Exam Revision
+
+- [Final exam revision guide](notes/final-exam-revision.md): priorities, operation checklists and common mistakes.
+- [Lecture source index](notes/lecture-source-index.md): all 12 source filenames and quick PDF-page lookup.
+- References count the cover as PDF page 1; printed slide labels may differ.
+
 ## Weekly Notes
 
 | Week | Notes | Main topics |
 | --- | --- | --- |
 | 2 | [UML and Design Patterns](notes/week-02-uml-and-design-patterns.md) | UML relationships; creational, behavioural and structural patterns; Java examples |
 | 3 | [Data Structures](notes/week-03-data-structures.md) | Binary search trees, predecessor/successor, deletion, red-black trees and AVL trees |
-| 4 | [Persistent Data](notes/week-04-persistent-data.md) | Storage formats, format selection, robustness, internationalisation and relational databases |
+| 4 | [Persistent Data](notes/week-04-persistent-data.md) | Storage choices, Java serialisation, XML/DOM/SAX, JSON and save/load examples |
 | 5 | [Software Testing](notes/week-05-software-testing.md) | JUnit 4, TDD, integration testing, coverage and fault injection |
 | 6 | [Android](notes/week-06-android.md) | Activities, intents, layouts, event listeners, adapters and pair programming |
 | 7 | [Refactoring and B-Trees](notes/week-07-refactoring-and-b-trees.md) | SOLID, code smells, B-tree properties, insertion and deletion |
+| 8 | [Design by Contract](notes/week-08-design-by-contract.md) | Preconditions, postconditions, invariants, JML and substitutability |
+| 8 | [Performance](notes/week-08-performance.md) | Profiling, latency/throughput, bottlenecks and Amdahl's law |
+| Guest / conceptual | [Professional Ethics and Intellectual Property](notes/professional-ethics-and-intellectual-property.md) | Copyright, licensing, patents, ACS values and case analysis |
 
 ### Worked examples
 
@@ -37,6 +46,8 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 - Software Testing
 - Refactoring
 - Design by Contract
+- Performance
+- Professional Ethics
 - Intellectual Property
 - Tokenisers, Parsers & Contemporary Development Methods
 
@@ -49,6 +60,8 @@ Updated with Week 2–7 notes on 5 October 2026.
 Added the red-black tree insertion supplement and tested Java example on 23 October 2026.
 
 Added a tokenisers and parsers revision page on 24 October 2026.
+
+Updated the notes against 12 supplied Semester 2 lecture PDFs on 3 November 2026. Added PDF-page references, a source index, an exam revision guide, and notes on contracts, performance, intellectual property and professional ethics. All notes are in English.
 
 This is a work in progress, and I’ll keep updating the notes as I learn more.
 
@@ -66,3 +79,4 @@ My goal is to build a clearer understanding of how software is designed, impleme
 ## Note
 
 These are my own study notes and explanations. I won’t upload course assessment solutions or reproduce restricted course materials.
+
