@@ -11,7 +11,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 001 | Android | [Which method is not an Activity lifecycle callback?](001-android-activity-lifecycle.md) | Question 3; quiz week not supplied | A, PDF pp. 8–10 |
 | 002 | Data structures | [Red-black interval keys and pre-order traversal](002-red-black-interval-preorder.md) | Question 4; quiz week not supplied | D, PDF pp. 33–34, 94–103 |
 | 003 | Performance | [Amdahl's law and overall latency](003-amdahls-law-latency.md) | Question 5; quiz week not supplied | F, PDF pp. 4–5 |
-| 004 | Git / version control | [Identify a commit's short hash from a history graph](004-git-history-short-hash.md) | Number not visible; resource: week-02-quiz | Linked GitLab exercise; exact hash pending |
+| 004 | Git / version control | [Identify a commit's short hash from a history graph](004-git-history-short-hash.md) | Number not visible; resource: week-02-quiz | Linked GitLab exercise; terminal log verified |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 

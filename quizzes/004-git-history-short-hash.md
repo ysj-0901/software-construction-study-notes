@@ -3,7 +3,7 @@
 - **Topic:** Git / version control
 - **Original question number:** Not visible in the supplied screenshot.
 - **Course resource:** The screenshot identifies `comp2100/student-resources/week-02-quiz`.
-- **Answer status:** Method explained; exact short hash still requires the repository log.
+- **Answer status:** Confirmed from the user-supplied terminal log.
 
 ## Question
 
@@ -32,6 +32,8 @@ flowchart TD
 
 <details>
 <summary><strong>Answer and explanation</strong></summary>
+
+**Correct answer: `71ba072` — `Add Preliminary Factorial implementation`.**
 
 **You cannot recover the actual hash from the stripped graph alone.** This is a repository-inspection task: display the identifiers, then match the graph position.
 
@@ -72,9 +74,26 @@ The command preserves the graph options while replacing the blank output with us
 
 If the repository has acquired more commits, match the surrounding branch/merge structure rather than relying on an absolute row number.
 
-### Why no numerical answer is supplied yet
+### Confirmed match from the terminal log
 
-The repository history could not be retrieved during this review. The screenshot intentionally removes the information needed to identify the exact hash. A screenshot or pasted output of the command above is sufficient to complete the answer.
+The user supplied the repository log with hashes and messages visible. The three commits on the right-hand path appear in this order from top to bottom:
+
+| Position | Short hash | Commit message |
+| --- | --- | --- |
+| Top | `d611fee` | Fix bug in loop exit condition |
+| Middle | `a146d20` | Fix bug in loop initial condition |
+| Bottom: X | **`71ba072`** | **Add Preliminary Factorial implementation** |
+
+Their common ancestor with the left-hand path is `fe400c9` (Add @Test annotation to all test cases). The left-hand commit is `898744c` (Add comment to factorial constructor), and the two paths join at merge commit `f72c6b9`.
+
+### Reading the connecting lines
+
+- `*` marks a commit.
+- A vertical line continues an ancestry connection.
+- `/` and `\` connect positions in different columns; neither symbol has a fixed meaning of "branch" or "merge" by itself.
+- Following this graph from bottom to top: shared history, divergence into two paths, work on each path, merge, then the latest shown commit.
+
+The graph's connections, rather than the direction of a single slash, determine the relationship.
 
 </details>
 
@@ -86,7 +105,7 @@ Trying to calculate a hash from the number of stars or their positions. The grap
 
 ## Sources
 
-- User-supplied quiz screenshot and its linked ANU GitLab resource.
+- User-supplied quiz screenshot, its linked ANU GitLab resource, and the follow-up terminal screenshot confirming the hash and commit message.
 - [Official Git pretty-format documentation](https://git-scm.com/docs/pretty-formats), for `%x20`, `%h`, and `%s`.
 - No lecture PDF page is assigned: an exact slide source for this Git exercise has not been verified.
 
