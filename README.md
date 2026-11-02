@@ -10,6 +10,10 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 - [Lecture source index](notes/lecture-source-index.md): all 12 source filenames and quick PDF-page lookup.
 - References count the cover as PDF page 1; printed slide labels may differ.
 
+## Quiz Reviews
+
+[Open the quiz review collection](quizzes/README.md). Each entry includes the question, options, a collapsible answer, explanations and relevant lecture references. Questions are added as they are reviewed; the collection is not yet a complete set of weekly quizzes.
+
 ## Weekly Notes
 
 | Week | Notes | Main topics |
@@ -78,5 +82,5 @@ My goal is to build a clearer understanding of how software is designed, impleme
 
 ## Note
 
-These are my own study notes and explanations. I won’t upload course assessment solutions or reproduce restricted course materials.
+These are my personal study notes and explanations, including reviews of quiz questions shared for revision. Original lecture decks are not uploaded; PDF references point back to the course materials.
 
