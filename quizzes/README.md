@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 5 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 6 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -13,6 +13,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 003 | Performance | [Amdahl's law and overall latency](003-amdahls-law-latency.md) | Question 5; quiz week not supplied | F, PDF pp. 4–5 |
 | 004 | Git / version control | [Identify a commit's short hash from a history graph](004-git-history-short-hash.md) | Number not visible; resource: week-02-quiz | Linked GitLab exercise; terminal log verified |
 | 005 | Design patterns | [DAO classification and primary intent](005-dao-classification-and-intent.md) | Question 1; quiz week not supplied | U, PDF pp. 94–95 |
+| 006 | Design patterns | [State pattern versus a boolean flag](006-state-pattern-vs-boolean.md) | Question 2; quiz week not supplied | U, PDF pp. 69–77 |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
