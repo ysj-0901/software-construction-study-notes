@@ -1,7 +1,5 @@
 # Quiz 009: Identify UML relationships in DAO, State and Iterator
 
-**Original label:** Question 5; quiz week not supplied.  
-**Result shown:** 0.1 / 0.1; correct answer selected.  
 [Back to quiz index](README.md)
 
 ## Question
