@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 11 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 12 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -19,6 +19,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 009 | UML relationships | [Identify relationships in DAO, State and Iterator](009-uml-relationships-dao-state-iterator.md) | Question 5; quiz week not supplied | U, PDF pp. 15–22, 69–77, 87–93 |
 | 010 | Git / version control | [What does a Git branch represent?](010-git-branch-pointer.md) | Question 1; quiz week not supplied | Supplied quiz; official Git book |
 | 011 | Git / version control | [HEAD after creating a branch and committing](011-git-head-branch-and-commit.md) | Question 3; quiz week not supplied | Supplied quiz; official Git book |
+| 012 | Data structures | [Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) | Number not visible; options not supplied | Proposed answer; official Java documentation |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
