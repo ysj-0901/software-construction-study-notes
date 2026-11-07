@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 13 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 14 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -21,6 +21,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 011 | Git / version control | [HEAD after creating a branch and committing](011-git-head-branch-and-commit.md) | Question 3; quiz week not supplied | Supplied quiz; official Git book |
 | 012 | Data structures | [Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) | Number not visible; Map answer confirmed | Supplied quiz; official Java documentation |
 | 013 | Design patterns | [Choose a platform-specific save dialog](013-factory-platform-save-dialog.md) | Question 2; quiz week not supplied | U, PDF pp. 52–58, 63–86 |
+| 014 | Git / version control | [Merge direction and a diverged history](014-git-merge-direction.md) | Question 3; quiz week not supplied | Supplied history graph; official Git documentation |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
