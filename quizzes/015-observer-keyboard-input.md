@@ -22,7 +22,7 @@ A UI framework allows visual components, which all extend a class called Compone
 
 A component that wants keyboard input **registers with InputManager**. When a key is pressed, InputManager calls the registered observers. A component can unregister when it no longer needs these events.
 
-This matches the lecture's **attach → notify → detach** mechanism.
+The basic mechanism is **attach → notify → detach**.
 
 ### Compare the three approaches
 
@@ -109,6 +109,48 @@ The second proposed method already resembles an Observer notification loop. The 
 
 For N components and k interested subscribers, notifying everyone takes N callback invocations; selective notification takes k. If k = N, there is no callback-count reduction.
 
+### When is Observer useful?
+
+**Subscription is the mechanism, not the only application scenario.** Use Observer when a change or event in one object should automatically notify other interested objects.
+
+It is especially useful when the set of interested objects can change, and the subject should not depend on their concrete classes.
+
+| Scenario | Change or event | Observers that receive notifications |
+| --- | --- | --- |
+| GUI event handling | A button is clicked, a key is pressed or the mouse moves | Registered event listeners |
+| Data and UI synchronisation | A data model changes | Tables, charts or other views displaying that data |
+| Task progress | A download progresses from 20% to 30% | A progress bar and percentage label |
+| Game events | A player's health decreases | A health bar and low-health warning component |
+| Messaging | A new message arrives | A chat window and unread-message counter |
+
+### Example: a points-and-badges system
+
+One possible design for a points-and-badges system is:
+
+**Points change → notify the points display to refresh → notify the badge module to check achievement thresholds.**
+
+Here, the points model is the **subject**. The display and badge module are **observers** that register for points-change events. The subject sends notifications through a common interface; each observer decides how to respond. The arrow sequence illustrates the flow, not a requirement that observers run in this particular order.
+
+For example:
+
+- The points display refreshes the number shown.
+- The badge module checks whether the new total unlocks an achievement.
+
+### Exam recognition clues
+
+Look for **event, listener, notify, update, one-to-many**, or **changes automatically reflected in other objects**.
+
+These are clues, not automatic rules: identify whether the design problem involves notifying interested objects about a change.
+
+### Observer versus State
+
+| Pattern | Main idea | Example |
+| --- | --- | --- |
+| **State** | An object's own behaviour changes with its current state. | An editor delegates editing actions differently in editing mode and read-only mode. |
+| **Observer** | An object changes or an event occurs, and other registered objects are notified. | A document change notifies a preview panel and word counter. |
+
+**State: change how I behave. Observer: notify others when something happens.**
+
 ### Memory aid
 
 **Interested objects subscribe → an event occurs → the subject notifies current subscribers.**
@@ -118,15 +160,5 @@ For N components and k interested subscribers, notifying everyone takes N callba
 
 </details>
 
-## Lecture references
-
-Source supplied for this review: `week02-uml-dp.pdf`. Page numbers are **PDF viewer pages, with the cover as page 1**.
-
-- **PDF p. 63:** one-to-many notification and loose coupling.
-- **PDF p. 65:** Subject attach/detach/notify methods and the observer collection.
-- **PDF pp. 66–67:** Observer interface, concrete customers and selective registration.
-- **PDF p. 68:** classroom activity; only current subscribers respond to the subject.
-
-These numbers match the existing U source, `week02-uml-dp(6).pdf`. The keyboard code, 100-versus-3 comparison and performance qualification are explanatory additions.
 
 Related: [Choosing between Factory, State, Template and Observer](013-factory-platform-save-dialog.md) · [Iterator versus array conversion](008-iterator-vs-array-conversion.md) · [Design-pattern notes](../notes/week-02-uml-and-design-patterns.md).
