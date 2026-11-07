@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 20 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 21 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -28,6 +28,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 018 | Design patterns | [Template Method for route calculation and display](018-template-route-planning.md) | Question 2; quiz week not supplied | Supplied quiz; U, PDF pp. 78–86 |
 | 019 | Data structures | [Neighbours in a pre-order traversal](019-preorder-traversal-neighbours.md) | Question 3; quiz week not supplied | Supplied tree and quiz feedback |
 | 020 | Persistent data | [Escape strings in JSON, XML and CSV](020-json-xml-csv-escaping.md) | Question 4; quiz week not supplied | Supplied quiz; JSON, XML and CSV specifications |
+| 021 | Testing | [Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) | Question 5; quiz week not supplied | Supplied control-flow graph and quiz feedback |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
