@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 16 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 17 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -24,6 +24,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 014 | Git / version control | [Merge direction and a diverged history](014-git-merge-direction.md) | Question 3; quiz week not supplied | Supplied history graph; official Git documentation |
 | 015 | Design patterns | [Observer for keyboard input: polling versus subscriptions](015-observer-keyboard-input.md) | Question 4; quiz week not supplied | U, PDF pp. 63–68 |
 | 016 | Persistent data | [Store a PNG profile picture: file path or encoded text](016-persistent-image-data.md) | Question number not visible; quiz week not supplied | Supplied quiz; Java and format documentation |
+| 017 | Git / version control | [Find deleted files in commit history](017-git-deleted-files.md) | Question number not visible; quiz week not supplied | Supplied quiz feedback; Git log documentation |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
