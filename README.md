@@ -12,7 +12,7 @@ I’m using it to keep track of what I learn, organise important concepts, and r
 
 ## Quiz Reviews
 
-[Open the quiz review collection](quizzes/README.md). Each entry includes the question, options, a collapsible answer, explanations and relevant lecture references. Questions are added as they are reviewed; the collection is not yet a complete set of weekly quizzes.
+[Open the quiz review collection](quizzes/README.md) to browse [by exam topic](quizzes/README.md#browse-by-exam-topic) or [by entry number](quizzes/README.md#question-index). Each entry includes the question, options, a collapsible answer, explanations and relevant lecture references. Questions are added as they are reviewed; the collection is not yet a complete set of weekly quizzes.
 
 ## Weekly Notes
 

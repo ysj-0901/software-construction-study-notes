@@ -4,6 +4,68 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 
 **Currently recorded: 26 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
+## Browse by exam topic
+
+Each question appears under its main exam topic. Use the [numbered question index](#question-index) for original question labels and lecture references.
+
+[Git](#git-and-version-control) · [UML and patterns](#uml-and-design-patterns) · [Data structures](#data-structures-and-traversal) · [Persistent data](#persistent-data) · [Testing](#software-testing) · [Android](#android) · [Performance](#performance)
+
+### Git and version control
+
+| Exam focus | Questions |
+| --- | --- |
+| Read commit graphs and identify hashes | [004 Identify a commit's short hash from a history graph](004-git-history-short-hash.md) |
+| Branch pointers, HEAD and creating branches | [010 What does a Git branch represent?](010-git-branch-pointer.md)<br>[011 HEAD after creating a branch and committing](011-git-head-branch-and-commit.md) |
+| Merge direction and diverged history | [014 Merge direction and a diverged history](014-git-merge-direction.md) |
+| Find deleted files in history | [017 Find deleted files in commit history](017-git-deleted-files.md) |
+
+### UML and design patterns
+
+| Exam focus | Questions |
+| --- | --- |
+| UML relationships in DAO, State and Iterator | [009 Identify relationships in DAO, State and Iterator](009-uml-relationships-dao-state-iterator.md) |
+| DAO intent and classification | [005 DAO classification and primary intent](005-dao-classification-and-intent.md) |
+| State objects and state-specific behaviour | [006 State pattern versus a boolean flag](006-state-pattern-vs-boolean.md) |
+| Factory and platform-specific object creation | [007 Factory UML and selecting an email notification](007-factory-uml-notifications.md)<br>[013 Choose a platform-specific save dialog](013-factory-platform-save-dialog.md) |
+| Iterator, array conversion and Java for-each | [008 Iterator versus array conversion](008-iterator-vs-array-conversion.md)<br>[025 Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) |
+| Observer, event subscriptions and polling | [015 Observer for keyboard input: polling versus subscriptions](015-observer-keyboard-input.md) |
+| Template Method and customisable algorithm steps | [018 Template Method for route calculation and display](018-template-route-planning.md) |
+
+### Data structures and traversal
+
+| Exam focus | Questions |
+| --- | --- |
+| Pre-order and post-order traversal, including interval keys | [002 Red-black interval keys and pre-order traversal](002-red-black-interval-preorder.md)<br>[019 Neighbours in a pre-order traversal](019-preorder-traversal-neighbours.md)<br>[024 Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) |
+| Choose a data structure for lookup by ID | [012 Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) |
+
+### Persistent data
+
+| Exam focus | Questions |
+| --- | --- |
+| Store binary images as paths or encoded text | [016 Store a PNG profile picture: file path or encoded text](016-persistent-image-data.md) |
+| Escape strings in JSON, XML and CSV | [020 Escape strings in JSON, XML and CSV](020-json-xml-csv-escaping.md) |
+| Serialise a Java collection with Gson | [023 Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md) |
+
+### Software testing
+
+| Exam focus | Questions |
+| --- | --- |
+| Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
+| JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md) |
+
+### Android
+
+| Exam focus | Questions |
+| --- | --- |
+| Activity lifecycle callbacks | [001 Which method is not an Activity lifecycle callback?](001-android-activity-lifecycle.md) |
+| ConstraintLayout anchors and horizontal alignment | [026 Centre a view on the edge of another view](026-constraintlayout-same-horizontal-anchor.md) |
+
+### Performance
+
+| Exam focus | Questions |
+| --- | --- |
+| Amdahl's law and end-to-end latency | [003 Amdahl's law and overall latency](003-amdahls-law-latency.md) |
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
