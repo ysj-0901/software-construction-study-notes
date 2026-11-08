@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 25 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 26 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -33,6 +33,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 023 | Persistent data | [Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md) | Question 2, quiz week not supplied | Supplied quiz and Gson User Guide. JSON background in PD, PDF pp. 28–30 |
 | 024 | Data structures | [Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) | Question number and quiz week not visible | Supplied tree and quiz feedback |
 | 025 | Design patterns / Java collections | [Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) | Question 4, quiz week not supplied | U, PDF pp. 87–93 and supplied quiz feedback |
+| 026 | Android | [Centre a view on the edge of another view](026-constraintlayout-same-horizontal-anchor.md) | Question 5, quiz week not supplied | Supplied quiz and AndroidX ConstraintLayout. Layout background in A, PDF pp. 15–16 |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
