@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 23 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 24 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Question index
 
@@ -31,6 +31,7 @@ A growing collection of weekly quiz questions reviewed during exam preparation. 
 | 021 | Testing | [Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) | Question 5; quiz week not supplied | Supplied control-flow graph and quiz feedback |
 | 022 | Testing | [Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md) | Question 1, quiz week not supplied | T, PDF pp. 18–38, 51–57 and supplied quiz feedback |
 | 023 | Persistent data | [Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md) | Question 2, quiz week not supplied | Supplied quiz and Gson User Guide. JSON background in PD, PDF pp. 28–30 |
+| 024 | Data structures | [Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) | Question number and quiz week not visible | Supplied tree and quiz feedback |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
