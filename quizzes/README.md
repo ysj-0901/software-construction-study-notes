@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 33 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 34 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -30,6 +30,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Iterator, array conversion and Java for-each | [008 Iterator versus array conversion](008-iterator-vs-array-conversion.md)<br>[025 Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) |
 | Observer, event subscriptions and polling | [015 Observer for keyboard input: polling versus subscriptions](015-observer-keyboard-input.md) |
 | Template Method and customisable algorithm steps | [018 Template Method for route calculation and display](018-template-route-planning.md) |
+| Facade and package access modifiers | [034 Public facade with package-private helpers](034-facade-package-access-modifiers.md) |
 
 ### SOLID and design by contract
 
@@ -95,6 +96,8 @@ Added [032 OpenCSV year-field binding](032-opencsv-year-field-binding.md), expla
 
 Added [033 AVL right-left insertion](033-avl-right-left-insertion.md), with rotation definitions, the first unbalanced ancestor, and diagrams for both rotations.
 
+Added [034 Facade and package access modifiers](034-facade-package-access-modifiers.md), explaining a public facade, package-private helpers, and the restriction on protected top-level classes.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -132,6 +135,7 @@ Added [033 AVL right-left insertion](033-avl-right-left-insertion.md), with rota
 | 031 | Testing | [Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; T, PDF pp. 58–61, 68–71; independently checked counterexample |
 | 032 | Persistent data | [Bind the CSV year column to yearMade with OpenCSV](032-opencsv-year-field-binding.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; official OpenCSV annotation documentation |
 | 033 | Data structures | [AVL right-left rotation after inserting 6](033-avl-right-left-insertion.md) | Question number and quiz week not visible; reviewed 11 Nov 2026 | Supplied tree and quiz feedback; D, PDF pp. 113–127 |
+| 034 | Design patterns / Java access | [Facade and Java package access modifiers](034-facade-package-access-modifiers.md) | Question 4; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; U, PDF pp. 105–109; Java Language Specification |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
