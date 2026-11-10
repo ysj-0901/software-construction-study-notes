@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 32 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 33 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -44,6 +44,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Pre-order and post-order traversal, including interval keys | [002 Red-black interval keys and pre-order traversal](002-red-black-interval-preorder.md)<br>[019 Neighbours in a pre-order traversal](019-preorder-traversal-neighbours.md)<br>[024 Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) |
 | Choose a data structure for lookup by ID | [012 Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) |
 | BST deletion using successor or predecessor | [029 Delete a node with two children](029-bst-delete-node-with-two-children.md) |
+| AVL insertion and single/double rotations | [033 Why inserting 6 needs a right-left rotation](033-avl-right-left-insertion.md) |
 
 ### Persistent data
 
@@ -92,6 +93,8 @@ Added [031 Path coverage versus branch coverage percentages](031-path-versus-bra
 
 Added [032 OpenCSV year-field binding](032-opencsv-year-field-binding.md), explaining position 3, the year/yearMade mismatch, and the corrected name-based alternative.
 
+Added [033 AVL right-left insertion](033-avl-right-left-insertion.md), with rotation definitions, the first unbalanced ancestor, and diagrams for both rotations.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -128,6 +131,7 @@ Added [032 OpenCSV year-field binding](032-opencsv-year-field-binding.md), expla
 | 030 | SOLID / Java inheritance | [Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) | Question 5; reviewed 10–11 Nov 2026, quiz week not supplied | Supplied quiz; R, PDF pp. 28–34; Java Language Specification |
 | 031 | Testing | [Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; T, PDF pp. 58–61, 68–71; independently checked counterexample |
 | 032 | Persistent data | [Bind the CSV year column to yearMade with OpenCSV](032-opencsv-year-field-binding.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; official OpenCSV annotation documentation |
+| 033 | Data structures | [AVL right-left rotation after inserting 6](033-avl-right-left-insertion.md) | Question number and quiz week not visible; reviewed 11 Nov 2026 | Supplied tree and quiz feedback; D, PDF pp. 113–127 |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
