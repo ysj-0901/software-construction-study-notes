@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 31 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 32 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -51,6 +51,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | --- | --- |
 | Store binary images as paths or encoded text | [016 Store a PNG profile picture: file path or encoded text](016-persistent-image-data.md) |
 | Escape strings in JSON, XML and CSV | [020 Escape strings in JSON, XML and CSV](020-json-xml-csv-escaping.md) |
+| OpenCSV field binding by position or header name | [032 Map the year column to yearMade](032-opencsv-year-field-binding.md) |
 | Serialise and deserialise Java collections with Gson | [023 Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md)<br>[028 Parse JSON back into a collection of accounts](028-gson-json-to-account-collection.md) |
 
 ### Software testing
@@ -89,6 +90,8 @@ Added Question 5 as [030 Liskov substitution, vector inheritance and casting](03
 
 Added [031 Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md), with an enumerated counterexample showing 70% path coverage and 56.25% branch coverage.
 
+Added [032 OpenCSV year-field binding](032-opencsv-year-field-binding.md), explaining position 3, the year/yearMade mismatch, and the corrected name-based alternative.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -124,6 +127,7 @@ Added [031 Path coverage versus branch coverage percentages](031-path-versus-bra
 | 029 | Data structures | [Delete a BST node with two children](029-bst-delete-node-with-two-children.md) | Question 3; reviewed 10 Nov 2026, quiz week not supplied | Supplied tree and quiz feedback; D, PDF pp. 56–57, 71–75 |
 | 030 | SOLID / Java inheritance | [Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) | Question 5; reviewed 10–11 Nov 2026, quiz week not supplied | Supplied quiz; R, PDF pp. 28–34; Java Language Specification |
 | 031 | Testing | [Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; T, PDF pp. 58–61, 68–71; independently checked counterexample |
+| 032 | Persistent data | [Bind the CSV year column to yearMade with OpenCSV](032-opencsv-year-field-binding.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; official OpenCSV annotation documentation |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
