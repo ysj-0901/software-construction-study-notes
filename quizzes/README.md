@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 30 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 31 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -58,6 +58,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Exam focus | Questions |
 | --- | --- |
 | Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
+| Path versus branch coverage percentages | [031 Why 70% path coverage does not guarantee 70% branch coverage](031-path-versus-branch-coverage-percentages.md) |
 | JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md) |
 
 ### Android
@@ -85,6 +86,8 @@ Each question appears under its main exam topic. Use the [numbered question inde
 ## Review continuation: 11 November 2026
 
 Added Question 5 as [030 Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md), including the follow-up example showing that upcasting preserves z.
+
+Added [031 Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md), with an enumerated counterexample showing 70% path coverage and 56.25% branch coverage.
 
 ## Question index
 
@@ -120,6 +123,7 @@ Added Question 5 as [030 Liskov substitution, vector inheritance and casting](03
 | 028 | Persistent data | [Parse JSON back into a collection of accounts](028-gson-json-to-account-collection.md) | Question 2; reviewed 10 Nov 2026, quiz week not supplied | Supplied quiz; Gson User Guide; JSON background in PD, PDF pp. 28–30 |
 | 029 | Data structures | [Delete a BST node with two children](029-bst-delete-node-with-two-children.md) | Question 3; reviewed 10 Nov 2026, quiz week not supplied | Supplied tree and quiz feedback; D, PDF pp. 56–57, 71–75 |
 | 030 | SOLID / Java inheritance | [Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) | Question 5; reviewed 10–11 Nov 2026, quiz week not supplied | Supplied quiz; R, PDF pp. 28–34; Java Language Specification |
+| 031 | Testing | [Path coverage versus branch coverage percentages](031-path-versus-branch-coverage-percentages.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; T, PDF pp. 58–61, 68–71; independently checked counterexample |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
