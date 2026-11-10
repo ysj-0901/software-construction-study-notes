@@ -2,6 +2,7 @@
 
 **Original label:** Question 4; quiz week not supplied.  
 **Topic:** Event-driven input handling with the Observer pattern.  
+**Reviewed again:** 10 November 2026; the same Question 4 was supplied with Observer marked correct. This entry is reused rather than counted as a new question.  
 [Back to quiz index](README.md)
 
 ## Question

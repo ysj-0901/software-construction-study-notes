@@ -56,6 +56,8 @@ Collection<Account> restored = gson.fromJson(data, accountType);
 
 The TypeToken example is supplementary. The quiz only asks how to write the JSON string.
 
+The reverse operation is now a separate supplied question: [Quiz 028 — parse JSON back into a collection](028-gson-json-to-account-collection.md), including a correction to the screenshot's TypeToken syntax.
+
 </details>
 
 ## Common mistake

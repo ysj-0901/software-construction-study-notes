@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 26 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 29 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -37,6 +37,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | --- | --- |
 | Pre-order and post-order traversal, including interval keys | [002 Red-black interval keys and pre-order traversal](002-red-black-interval-preorder.md)<br>[019 Neighbours in a pre-order traversal](019-preorder-traversal-neighbours.md)<br>[024 Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) |
 | Choose a data structure for lookup by ID | [012 Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) |
+| BST deletion using successor or predecessor | [029 Delete a node with two children](029-bst-delete-node-with-two-children.md) |
 
 ### Persistent data
 
@@ -44,14 +45,14 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | --- | --- |
 | Store binary images as paths or encoded text | [016 Store a PNG profile picture: file path or encoded text](016-persistent-image-data.md) |
 | Escape strings in JSON, XML and CSV | [020 Escape strings in JSON, XML and CSV](020-json-xml-csv-escaping.md) |
-| Serialise a Java collection with Gson | [023 Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md) |
+| Serialise and deserialise Java collections with Gson | [023 Convert a collection to a JSON string with Gson](023-gson-collection-to-json.md)<br>[028 Parse JSON back into a collection of accounts](028-gson-json-to-account-collection.md) |
 
 ### Software testing
 
 | Exam focus | Questions |
 | --- | --- |
 | Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
-| JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md) |
+| JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md) |
 
 ### Android
 
@@ -65,6 +66,15 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Exam focus | Questions |
 | --- | --- |
 | Amdahl's law and end-to-end latency | [003 Amdahl's law and overall latency](003-amdahls-law-latency.md) |
+
+## Review session: 10 November 2026
+
+| Supplied question | Saved entry | Result |
+| --- | --- | --- |
+| Question 1: string reversal assertion | [027 JUnit string equality](027-junit-string-reversal-assertion.md) | New entry |
+| Question 2: JSON back to accounts | [028 Gson deserialisation](028-gson-json-to-account-collection.md) | New entry; screenshot syntax correction included |
+| Question 3: delete M from the BST | [029 BST deletion](029-bst-delete-node-with-two-children.md) | New entry |
+| Question 4: keyboard input notifications | [015 Observer](015-observer-keyboard-input.md) | Existing question reviewed again; not counted twice |
 
 ## Question index
 
@@ -96,6 +106,9 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | 024 | Data structures | [Neighbours in a post-order traversal](024-postorder-traversal-neighbours.md) | Question number and quiz week not visible | Supplied tree and quiz feedback |
 | 025 | Design patterns / Java collections | [Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) | Question 4, quiz week not supplied | U, PDF pp. 87–93 and supplied quiz feedback |
 | 026 | Android | [Centre a view on the edge of another view](026-constraintlayout-same-horizontal-anchor.md) | Question 5, quiz week not supplied | Supplied quiz and AndroidX ConstraintLayout. Layout background in A, PDF pp. 15–16 |
+| 027 | Testing | [Choose an assertion for string reversal](027-junit-string-reversal-assertion.md) | Question 1; reviewed 10 Nov 2026, quiz week not supplied | Supplied quiz; JUnit Assert API; T, PDF pp. 18–38 |
+| 028 | Persistent data | [Parse JSON back into a collection of accounts](028-gson-json-to-account-collection.md) | Question 2; reviewed 10 Nov 2026, quiz week not supplied | Supplied quiz; Gson User Guide; JSON background in PD, PDF pp. 28–30 |
+| 029 | Data structures | [Delete a BST node with two children](029-bst-delete-node-with-two-children.md) | Question 3; reviewed 10 Nov 2026, quiz week not supplied | Supplied tree and quiz feedback; D, PDF pp. 56–57, 71–75 |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
