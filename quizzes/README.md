@@ -2,13 +2,13 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 29 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 30 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
 Each question appears under its main exam topic. Use the [numbered question index](#question-index) for original question labels and lecture references.
 
-[Git](#git-and-version-control) · [UML and patterns](#uml-and-design-patterns) · [Data structures](#data-structures-and-traversal) · [Persistent data](#persistent-data) · [Testing](#software-testing) · [Android](#android) · [Performance](#performance)
+[Git](#git-and-version-control) · [UML and patterns](#uml-and-design-patterns) · [SOLID and contracts](#solid-and-design-by-contract) · [Data structures](#data-structures-and-traversal) · [Persistent data](#persistent-data) · [Testing](#software-testing) · [Android](#android) · [Performance](#performance)
 
 ### Git and version control
 
@@ -30,6 +30,12 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Iterator, array conversion and Java for-each | [008 Iterator versus array conversion](008-iterator-vs-array-conversion.md)<br>[025 Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) |
 | Observer, event subscriptions and polling | [015 Observer for keyboard input: polling versus subscriptions](015-observer-keyboard-input.md) |
 | Template Method and customisable algorithm steps | [018 Template Method for route calculation and display](018-template-route-planning.md) |
+
+### SOLID and design by contract
+
+| Exam focus | Questions |
+| --- | --- |
+| LSP, preconditions, overriding and reference casts | [030 Vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) |
 
 ### Data structures and traversal
 
@@ -76,6 +82,10 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Question 3: delete M from the BST | [029 BST deletion](029-bst-delete-node-with-two-children.md) | New entry |
 | Question 4: keyboard input notifications | [015 Observer](015-observer-keyboard-input.md) | Existing question reviewed again; not counted twice |
 
+## Review continuation: 11 November 2026
+
+Added Question 5 as [030 Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md), including the follow-up example showing that upcasting preserves z.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -109,6 +119,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | 027 | Testing | [Choose an assertion for string reversal](027-junit-string-reversal-assertion.md) | Question 1; reviewed 10 Nov 2026, quiz week not supplied | Supplied quiz; JUnit Assert API; T, PDF pp. 18–38 |
 | 028 | Persistent data | [Parse JSON back into a collection of accounts](028-gson-json-to-account-collection.md) | Question 2; reviewed 10 Nov 2026, quiz week not supplied | Supplied quiz; Gson User Guide; JSON background in PD, PDF pp. 28–30 |
 | 029 | Data structures | [Delete a BST node with two children](029-bst-delete-node-with-two-children.md) | Question 3; reviewed 10 Nov 2026, quiz week not supplied | Supplied tree and quiz feedback; D, PDF pp. 56–57, 71–75 |
+| 030 | SOLID / Java inheritance | [Liskov substitution, vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) | Question 5; reviewed 10–11 Nov 2026, quiz week not supplied | Supplied quiz; R, PDF pp. 28–34; Java Language Specification |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
