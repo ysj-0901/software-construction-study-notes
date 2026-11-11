@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 34 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 36 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -37,6 +37,8 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Exam focus | Questions |
 | --- | --- |
 | LSP, preconditions, overriding and reference casts | [030 Vector inheritance and casting](030-liskov-vector-inheritance-and-casting.md) |
+| Interface checks versus behavioural contracts | [035 Design by Contract and interface enforcement](035-design-by-contract-interface-enforcement.md) |
+| JML assertions, pure methods and contract keywords | [036 Pure methods in JML preconditions](036-jml-pure-methods-in-preconditions.md) |
 
 ### Data structures and traversal
 
@@ -98,6 +100,8 @@ Added [033 AVL right-left insertion](033-avl-right-left-insertion.md), with rota
 
 Added [034 Facade and package access modifiers](034-facade-package-access-modifiers.md), explaining a public facade, package-private helpers, and the restriction on protected top-level classes.
 
+Added [035 Design by Contract and interface enforcement](035-design-by-contract-interface-enforcement.md) and [036 JML pure methods in preconditions](036-jml-pure-methods-in-preconditions.md) from the Week 08 lecture exercises, including the incorrect-statement answers a and c, examples, and English summaries.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -136,6 +140,8 @@ Added [034 Facade and package access modifiers](034-facade-package-access-modifi
 | 032 | Persistent data | [Bind the CSV year column to yearMade with OpenCSV](032-opencsv-year-field-binding.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; official OpenCSV annotation documentation |
 | 033 | Data structures | [AVL right-left rotation after inserting 6](033-avl-right-left-insertion.md) | Question number and quiz week not visible; reviewed 11 Nov 2026 | Supplied tree and quiz feedback; D, PDF pp. 113–127 |
 | 034 | Design patterns / Java access | [Facade and Java package access modifiers](034-facade-package-access-modifiers.md) | Question 4; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; U, PDF pp. 105–109; Java Language Specification |
+| 035 | Design by Contract / Java interfaces | [Design by Contract and interface enforcement](035-design-by-contract-interface-enforcement.md) | Week 08 lecture exercise; reviewed 11 Nov 2026 | C, PDF p. 43; background pp. 7–8, 13–18, 26, 40 |
+| 036 | Design by Contract / JML | [Pure methods in JML preconditions](036-jml-pure-methods-in-preconditions.md) | Week 08 lecture exercise; reviewed 11 Nov 2026 | C, PDF p. 44; background pp. 28–29, 34 |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
