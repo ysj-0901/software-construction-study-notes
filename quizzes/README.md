@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 38 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 39 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -63,6 +63,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 
 | Exam focus | Questions |
 | --- | --- |
+| Coverage subsumption: path, branch and condition | [039 Coverage relationships](039-coverage-subsumption.md) |
 | Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
 | Path versus branch coverage percentages | [031 Why 70% path coverage does not guarantee 70% branch coverage](031-path-versus-branch-coverage-percentages.md) |
 | JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md)<br>[037 Parameterised tests across algorithm implementations — priority review](037-junit-parameterised-algorithm-tests.md) |
@@ -107,6 +108,8 @@ Added [037 JUnit 4 parameterised algorithm tests](037-junit-parameterised-algori
 
 Added [038 Persistent format size comparison](038-persistent-format-size-comparison.md), with matching CSV/JSON/XML examples, binary versus text numbers, primitive widths and the limits of the expected ordering.
 
+Added [039 Coverage subsumption](039-coverage-subsumption.md), explaining why path coverage subsumes branch coverage and providing counterexamples for the other options.
+
 ## Question index
 
 | Entry | Topic | Question | Original label | Lecture reference |
@@ -149,6 +152,7 @@ Added [038 Persistent format size comparison](038-persistent-format-size-compari
 | 036 | Design by Contract / JML | [Pure methods in JML preconditions](036-jml-pure-methods-in-preconditions.md) | Week 08 lecture exercise; reviewed 11 Nov 2026 | C, PDF p. 44; background pp. 28–29, 34 |
 | 037 | Testing / JUnit 4 | [Parameterised tests across algorithm implementations](037-junit-parameterised-algorithm-tests.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied; priority review | T, PDF pp. 32–34; supplied quiz feedback; JUnit 4 documentation |
 | 038 | Persistent data | [Serialized, CSV, JSON and XML file sizes](038-persistent-format-size-comparison.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; PD background pp. 16–19, 21–30; Java serialization documentation |
+| 039 | Testing / Coverage | [Coverage subsumption relationships](039-coverage-subsumption.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | T, PDF pp. 58–64, 68–71; supplied quiz feedback |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
