@@ -2,7 +2,7 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 36 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 37 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
@@ -64,7 +64,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | --- | --- |
 | Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
 | Path versus branch coverage percentages | [031 Why 70% path coverage does not guarantee 70% branch coverage](031-path-versus-branch-coverage-percentages.md) |
-| JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md) |
+| JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md)<br>[037 Parameterised tests across algorithm implementations — priority review](037-junit-parameterised-algorithm-tests.md) |
 
 ### Android
 
@@ -101,6 +101,8 @@ Added [033 AVL right-left insertion](033-avl-right-left-insertion.md), with rota
 Added [034 Facade and package access modifiers](034-facade-package-access-modifiers.md), explaining a public facade, package-private helpers, and the restriction on protected top-level classes.
 
 Added [035 Design by Contract and interface enforcement](035-design-by-contract-interface-enforcement.md) and [036 JML pure methods in preconditions](036-jml-pure-methods-in-preconditions.md) from the Week 08 lecture exercises, including the incorrect-statement answers a and c, examples, and English summaries.
+
+Added [037 JUnit 4 parameterised algorithm tests](037-junit-parameterised-algorithm-tests.md), marked for priority review, with corrected code, an execution trace, annotation roles and the static/non-static distinction.
 
 ## Question index
 
@@ -142,6 +144,7 @@ Added [035 Design by Contract and interface enforcement](035-design-by-contract-
 | 034 | Design patterns / Java access | [Facade and Java package access modifiers](034-facade-package-access-modifiers.md) | Question 4; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz; U, PDF pp. 105–109; Java Language Specification |
 | 035 | Design by Contract / Java interfaces | [Design by Contract and interface enforcement](035-design-by-contract-interface-enforcement.md) | Week 08 lecture exercise; reviewed 11 Nov 2026 | C, PDF p. 43; background pp. 7–8, 13–18, 26, 40 |
 | 036 | Design by Contract / JML | [Pure methods in JML preconditions](036-jml-pure-methods-in-preconditions.md) | Week 08 lecture exercise; reviewed 11 Nov 2026 | C, PDF p. 44; background pp. 28–29, 34 |
+| 037 | Testing / JUnit 4 | [Parameterised tests across algorithm implementations](037-junit-parameterised-algorithm-tests.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied; priority review | T, PDF pp. 32–34; supplied quiz feedback; JUnit 4 documentation |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
