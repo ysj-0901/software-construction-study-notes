@@ -2,13 +2,13 @@
 
 A growing collection of weekly quiz questions reviewed during exam preparation. All questions and explanations are recorded in English.
 
-**Currently recorded: 39 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
+**Currently recorded: 42 questions.** This collection contains the questions shared for review so far, not every question from every weekly quiz.
 
 ## Browse by exam topic
 
 Each question appears under its main exam topic. Use the [numbered question index](#question-index) for original question labels and lecture references.
 
-[Git](#git-and-version-control) · [UML and patterns](#uml-and-design-patterns) · [SOLID and contracts](#solid-and-design-by-contract) · [Data structures](#data-structures-and-traversal) · [Persistent data](#persistent-data) · [Testing](#software-testing) · [Android](#android) · [Performance](#performance)
+[Git](#git-and-version-control) · [UML and patterns](#uml-and-design-patterns) · [SOLID and contracts](#solid-and-design-by-contract) · [Data structures](#data-structures-and-traversal) · [Persistent data](#persistent-data) · [Testing](#software-testing) · [Parsing](#tokenisers-and-parsers) · [Android](#android) · [Performance](#performance)
 
 ### Git and version control
 
@@ -25,7 +25,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | --- | --- |
 | UML relationships in DAO, State and Iterator | [009 Identify relationships in DAO, State and Iterator](009-uml-relationships-dao-state-iterator.md) |
 | DAO intent and classification | [005 DAO classification and primary intent](005-dao-classification-and-intent.md) |
-| State objects and state-specific behaviour | [006 State pattern versus a boolean flag](006-state-pattern-vs-boolean.md) |
+| State objects, behaviour and transition coupling | [006 State pattern versus a boolean flag](006-state-pattern-vs-boolean.md)<br>[041 Return the next State versus calling a Context setter](041-state-transition-return-versus-setter.md) |
 | Factory and platform-specific object creation | [007 Factory UML and selecting an email notification](007-factory-uml-notifications.md)<br>[013 Choose a platform-specific save dialog](013-factory-platform-save-dialog.md) |
 | Iterator, array conversion and Java for-each | [008 Iterator versus array conversion](008-iterator-vs-array-conversion.md)<br>[025 Enable for-each traversal on CrazyList](025-iterator-crazylist-for-each.md) |
 | Observer, event subscriptions and polling | [015 Observer for keyboard input: polling versus subscriptions](015-observer-keyboard-input.md) |
@@ -48,6 +48,7 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Choose a data structure for lookup by ID | [012 Store users for frequent lookup by ID](012-user-id-lookup-data-structure.md) |
 | BST deletion using successor or predecessor | [029 Delete a node with two children](029-bst-delete-node-with-two-children.md) |
 | AVL insertion and single/double rotations | [033 Why inserting 6 needs a right-left rotation](033-avl-right-left-insertion.md) |
+| B-tree deletion and borrowing through the parent | [040 Delete 14 from an order-3 B-tree](040-btree-deletion-borrow-through-parent.md) |
 
 ### Persistent data
 
@@ -67,6 +68,12 @@ Each question appears under its main exam topic. Use the [numbered question inde
 | Branch coverage and minimum test cases | [021 Minimum tests for complete branch coverage](021-minimum-branch-coverage.md) |
 | Path versus branch coverage percentages | [031 Why 70% path coverage does not guarantee 70% branch coverage](031-path-versus-branch-coverage-percentages.md) |
 | JUnit 4 assertions, exceptions, timeouts and parameterised tests | [022 Review a JUnit 4 factorial test class](022-junit-factorial-test-review.md)<br>[027 Choose an assertion for string reversal](027-junit-string-reversal-assertion.md)<br>[037 Parameterised tests across algorithm implementations — priority review](037-junit-parameterised-algorithm-tests.md) |
+
+### Tokenisers and parsers
+
+| Exam focus | Questions |
+| --- | --- |
+| Start symbol, parse-tree root and main versus nested verbs | [042 Sentence root and the main verb](042-grammar-sentence-root-main-verb.md) |
 
 ### Android
 
@@ -109,6 +116,8 @@ Added [037 JUnit 4 parameterised algorithm tests](037-junit-parameterised-algori
 Added [038 Persistent format size comparison](038-persistent-format-size-comparison.md), with matching CSV/JSON/XML examples, binary versus text numbers, primitive widths and the limits of the expected ordering.
 
 Added [039 Coverage subsumption](039-coverage-subsumption.md), explaining why path coverage subsumes branch coverage and providing counterexamples for the other options.
+
+Added [040 B-tree deletion](040-btree-deletion-borrow-through-parent.md), [041 State transition coupling](041-state-transition-return-versus-setter.md), and [042 Parse-tree root and main verb](042-grammar-sentence-root-main-verb.md), with the supplied options, explanations, common mistakes, English summaries and lecture references.
 
 ## Question index
 
@@ -153,6 +162,9 @@ Added [039 Coverage subsumption](039-coverage-subsumption.md), explaining why pa
 | 037 | Testing / JUnit 4 | [Parameterised tests across algorithm implementations](037-junit-parameterised-algorithm-tests.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied; priority review | T, PDF pp. 32–34; supplied quiz feedback; JUnit 4 documentation |
 | 038 | Persistent data | [Serialized, CSV, JSON and XML file sizes](038-persistent-format-size-comparison.md) | Question 2; reviewed 11 Nov 2026, quiz week not supplied | Supplied quiz feedback; PD background pp. 16–19, 21–30; Java serialization documentation |
 | 039 | Testing / Coverage | [Coverage subsumption relationships](039-coverage-subsumption.md) | Question 1; reviewed 11 Nov 2026, quiz week not supplied | T, PDF pp. 58–64, 68–71; supplied quiz feedback |
+| 040 | Data structures / B-trees | [Delete 14 by borrowing through the parent](040-btree-deletion-borrow-through-parent.md) | Question 3; reviewed 11 Nov 2026, quiz week not supplied | R, PDF pp. 60–67, 75–80; supplied quiz feedback |
+| 041 | Design patterns / State | [Return the next State versus calling a Context setter](041-state-transition-return-versus-setter.md) | Question 4; reviewed 11 Nov 2026, quiz week not supplied | U, PDF pp. 69–77; supplied quiz feedback |
+| 042 | Parsing | [Sentence root and the main verb](042-grammar-sentence-root-main-verb.md) | Question 5; reviewed 11 Nov 2026, quiz week not supplied | P, PDF pp. 42–58, 59–69; supplied quiz feedback |
 
 Entry numbers follow the order in which questions are added. They are separate from the original quiz's question numbers. A topic's lecture week does not necessarily identify the quiz week.
 
